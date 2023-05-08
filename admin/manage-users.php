@@ -34,6 +34,22 @@ $users = mysqli_query($connection, $query);
                 ?>
             </p>
         </div>
+    <?php elseif (isset($_SESSION['delete-user-success'])): ?>
+        <div class="alert__message success container">
+            <p>
+                <?= $_SESSION['delete-user-success'];
+                unset($_SESSION['delete-user-success']);
+                ?>
+            </p>
+        </div>
+    <?php elseif (isset($_SESSION['delete-user'])): ?>
+        <div class="alert__message error container">
+            <p>
+                <?= $_SESSION['delete-user'];
+                unset($_SESSION['delete-user']);
+                ?>
+            </p>
+        </div>
     <?php endif ?>
 
     <div class="container dashboard__container">
@@ -79,37 +95,43 @@ $users = mysqli_query($connection, $query);
 
         <main>
             <h2>Manage Users</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Username</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                        <th>Admin</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php while ($user = mysqli_fetch_assoc($users)): ?>
+            <?php if (mysqli_num_rows($users) > 0): ?>
+                <table>
+                    <thead>
                         <tr>
-                            <td>
-                                <?= "{$user['firstname']} {$user['lastname']}" ?>
-                            </td>
-                            <td>
-                                <?= $user['username'] ?>
-                            </td>
-                            <td><a href="<?= ROOT_URL ?>admin/edit-user.php?id=<?= $user['id'] ?>" class="btn sm">Edit</a>
-                            </td>
-                            <td><a href="<?= ROOT_URL ?>admin/delete-user.php?id=<?= $user['id'] ?>"
-                                    class="btn sm">Delete</a>
-                            </td>
-                            <td>
-                                <?= $user['is_admin'] ? "Yes" : 'No' ?>
-                            </td>
+                            <th>Name</th>
+                            <th>Username</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                            <th>Admin</th>
                         </tr>
-                    <?php endwhile ?>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        <?php while ($user = mysqli_fetch_assoc($users)): ?>
+                            <tr>
+                                <td>
+                                    <?= "{$user['firstname']} {$user['lastname']}" ?>
+                                </td>
+                                <td>
+                                    <?= $user['username'] ?>
+                                </td>
+                                <td><a href="<?= ROOT_URL ?>admin/edit-user.php?id=<?= $user['id'] ?>" class="btn sm">Edit</a>
+                                </td>
+                                <td><a href="<?= ROOT_URL ?>admin/delete-user.php?id=<?= $user['id'] ?>"
+                                        class="btn sm">Delete</a>
+                                </td>
+                                <td>
+                                    <?= $user['is_admin'] ? "Yes" : 'No' ?>
+                                </td>
+                            </tr>
+                        <?php endwhile ?>
+                    </tbody>
+                </table>
+            <?php else: ?>
+                <div class="alert__message error">
+                    <?= "No User's found" ?>
+                </div>
+            <?php endif ?>
         </main>
 
     </div>
