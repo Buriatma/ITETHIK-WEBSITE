@@ -16,6 +16,7 @@ if (isset($_POST['submit'])) {
         $fetch_user_query = "SELECT * FROM users WHERE username='$username_email' OR email='$username_email'";
         $fetch_user_result = mysqli_query($connection, $fetch_user_query);
 
+
         if (mysqli_num_rows($fetch_user_result) == 1) {
 
             $user_record = mysqli_fetch_assoc($fetch_user_result);

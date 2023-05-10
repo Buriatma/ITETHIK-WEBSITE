@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
         header('location: ' . ROOT_URL . 'admin/add-category.php');
         die();
     } else {
-        $query = "INSERT INTO categories (title , description) values ('$title' , '$description')";
+        $query = "INSERT INTO categories (title , description) VALUES ('$title' , '$description')";
 
         $result = mysqli_query($connection, $query);
 

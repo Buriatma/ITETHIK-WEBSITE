@@ -18,6 +18,20 @@ if (isset($_GET['id'])) {
         }
     }
 
+    $thumbnail_query = "SELECT thumbnail FROM posts WHERE author_id=$id";
+    $thumbnail_result = mysqli_query($connection, $thumbnail_query);
+
+    if (mysqli_num_rows($thumbnail_result) > 0) {
+        while ($thumbnail = mysqli_fetch_assoc($thumbnail_result)) {
+            $thumbnail_name = $thumbnail['thumbnail'];
+            $thumbnail_path = '../assets/images/blog-posts-images/' . $thumbnail['thumbnail'];
+
+            if ($thumbnail_path) {
+                unlink($thumbnail_path);
+            }
+        }
+    }
+
 
     $delete_user_query = "DELETE FROM users WHERE id=$id";
     $delete_user_result = mysqli_query($connection, $delete_user_query);
