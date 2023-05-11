@@ -1,152 +1,129 @@
 <?php
-include 'config/header.php'
-    ?>
+include 'config/header.php';
 
+$featured_query = "SELECT * FROM posts WHERE is_featured = 1";
+$featured_result = mysqli_query($connection, $featured_query);
+$featured = mysqli_fetch_assoc($featured_result);
 
-<section class="featured">
-    <div class="container featured__container">
-        <div class="post__thumbnail">
-            <img src="../assets/images/blog1.jpg">
-        </div>
-        <div class="post__info">
-            <a href="category-posts.php" class="category__button">Desktops</a>
-            <h2 class="post__title"><a href="post.php">HRU</a></h2>
-            <p class="post__body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, minima deserunt ad
-                et dolores sunt illum est.
-            </p>
-            <div class="post__author">
-                <div class="post__author-avatar">
-                    <img src="../assets/images/avatar2.jpg">
-                </div>
-                <div class="post__author-info">
-                    <h5>By: Keshav Sharma</h5>
-                    <small>1 April, 2023 - 05:30</small>
+$query = "SELECT * FROM posts ORDER BY date_time DESC LIMIT 9";
+$posts = mysqli_query($connection, $query);
+
+?>
+
+<?php if (mysqli_num_rows($featured_result) == 1): ?>
+    <section class="featured">
+        <div class="container featured__container">
+            <div class="post__thumbnail">
+                <img src="assets/images/blog-posts-images/<?= $featured['thumbnail'] ?>">
+            </div>
+            <div class="post__info">
+
+                <?php
+                $category_id = $featured['category_id'];
+                $category_query = "SELECT * FROM categories WHERE id = $category_id";
+                $category_result = mysqli_query($connection, $category_query);
+                $category = mysqli_fetch_assoc($category_result);
+                ?>
+
+                <a href="<?= ROOT_URL ?>category-posts.php?id=<?= $featured['category_id'] ?>" class="category__button">
+                    <?= $category['title'] ?>
+                </a>
+                <h2 class="post__title"><a href="<?= ROOT_URL ?>post.php?id=<?= $featured['id'] ?>">
+                        <?= $featured['title'] ?>
+                    </a></h2>
+                <p class="post__body">
+                    <?= substr($featured['body'], 0, 250) ?>...
+                </p>
+                <div class="post__author">
+                    <?php
+                    $author_id = $featured['author_id'];
+                    $author_query = "SELECT * FROM users WHERE id = $author_id";
+                    $author_result = mysqli_query($connection, $author_query);
+                    $author = mysqli_fetch_assoc($author_result);
+                    ?>
+                    <div class="post__author-avatar">
+                        <img src="assets/images/blog-author-avatars/<?= $author['avatar'] ?>">
+                    </div>
+                    <div class="post__author-info">
+                        <h5>By:
+                            <?= "{$author['firstname']} {$author['lastname']}" ?>
+                        </h5>
+                        <small>
+                            <?= date("M d, Y - h:i", strtotime($featured['date_time'])) ?>
+                        </small>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+<?php endif ?>
 
 <!--END OF FEATURED-->
 
-<section class="posts">
+<section class="posts <?= $featured ? '' : 'section__extra-margin' ?>">
     <div class="container posts__container">
 
-        <article class="post">
-            <div class="post__thumbnail">
-                <img src="../assets/images/blog2.jpg">
-            </div>
-            <div class="post__info">
-                <a href="category-posts.php" class="category__button">Desktops</a>
-                <h3 class="post__title">
-                    <a href="post.php">Lorem ipsum dolor sit amet consectetur adipisicing elit. kll kslkm</a>
-                </h3>
-                <p class="post__body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla cupiditate ea officiis non hic
-                    quaerat aliquid ullam dolorem sapiente amet, quidem voluptate vero consectetur illo velit
-                    delectus ab repellat autem.
-                </p>
-                <div class="post__author">
-                    <div class="post__author-avatar">
-                        <img src="../assets/images/avatar3.jpg">
-                    </div>
-                    <div class="post__author-info">
-                        <h5> By: Keshav Sharma</h5>
-                        <small>1 April, 2023 - 05:30</small>
+        <?php while ($post = mysqli_fetch_assoc($posts)): ?>
+            <article class="post">
+                <div class="post__thumbnail">
+                    <img src="assets/images/blog-posts-images/<?= $post['thumbnail'] ?>">
+                </div>
+                <div class="post__info">
+                    <?php
+                    $category_id = $post['category_id'];
+                    $category_query = "SELECT * FROM categories WHERE id = $category_id";
+                    $category_result = mysqli_query($connection, $category_query);
+                    $category = mysqli_fetch_assoc($category_result);
+                    ?>
+
+                    <a href="<?= ROOT_URL ?>category-posts.php?id=<?= $post['category_id'] ?>" class="category__button">
+                        <?= $category['title'] ?>
+                    </a>
+                    <h3 class="post__title">
+                        <a href="<?= ROOT_URL ?>post.php?id=<?= $post['id'] ?>">
+                            <?= $post['title'] ?>
+                        </a>
+                    </h3>
+                    <p class="post__body">
+                        <?= substr($post['body'], 0, 100) ?>...
+                    </p>
+                    <div class="post__author">
+                        <?php
+                        $author_id = $post['author_id'];
+                        $author_query = "SELECT * FROM users WHERE id = $author_id";
+                        $author_result = mysqli_query($connection, $author_query);
+                        $author = mysqli_fetch_assoc($author_result);
+                        ?>
+                        <div class="post__author-avatar">
+                            <img src="assets/images/blog-author-avatars/<?= $author['avatar'] ?>">
+                        </div>
+                        <div class="post__author-info">
+                            <h5>By:
+                                <?= "{$author['firstname']} {$author['lastname']}" ?>
+                            </h5>
+                            <small>
+                                <?= date("M d, Y - h:i", strtotime($post['date_time'])) ?>
+                            </small>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </article>
-
-        <article class="post">
-            <div class="post__thumbnail">
-                <img src="../assets/images/blog2.jpg">
-            </div>
-            <div class="post__info">
-                <a herf="" class="category__button">Desktops</a>
-                <h3 class="post__title">
-                    <a href="post.php">Lorem ipsum dolor sit amet consectetur adipisicing elit. kll kslkm</a>
-                </h3>
-                <p class="post__body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla cupiditate ea officiis non hic
-                    quaerat aliquid ullam dolorem sapiente amet, quidem voluptate vero consectetur illo velit
-                    delectus ab repellat autem.
-                </p>
-                <div class="post__author">
-                    <div class="post__author-avatar">
-                        <img src="../assets/images/avatar3.jpg">
-                    </div>
-                    <div class="post__author-info">
-                        <h5> By: Keshav Sharma</h5>
-                        <small>1 April, 2023 - 05:30</small>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-        <article class="post">
-            <div class="post__thumbnail">
-                <img src="../assets/images/blog2.jpg">
-            </div>
-            <div class="post__info">
-                <a herf="" class="category__button">Desktops</a>
-                <h3 class="post__title">
-                    <a href="post.php">Lorem ipsum dolor sit amet consectetur adipisicing elit. kll kslkm</a>
-                </h3>
-                <p class="post__body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla cupiditate ea officiis non hic
-                    quaerat aliquid ullam dolorem sapiente amet, quidem voluptate vero consectetur illo velit
-                    delectus ab repellat autem.
-                </p>
-                <div class="post__author">
-                    <div class="post__author-avatar">
-                        <img src="../assets/images/avatar3.jpg">
-                    </div>
-                    <div class="post__author-info">
-                        <h5> By: Keshav Sharma</h5>
-                        <small>1 April, 2023 - 05:30</small>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-        <article class="post">
-            <div class="post__thumbnail">
-                <img src="../assets/images/blog2.jpg">
-            </div>
-            <div class="post__info">
-                <a herf="" class="category__button">Desktops</a>
-                <h3 class="post__title">
-                    <a href="post.php">Lorem ipsum dolor sit amet consectetur adipisicing elit. kll kslkm</a>
-                </h3>
-                <p class="post__body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla cupiditate ea officiis non hic
-                    quaerat aliquid ullam dolorem sapiente amet, quidem voluptate vero consectetur illo velit
-                    delectus ab repellat autem.
-                </p>
-                <div class="post__author">
-                    <div class="post__author-avatar">
-                        <img src="../assets/images/avatar3.jpg">
-                    </div>
-                    <div class="post__author-info">
-                        <h5> By: Keshav Sharma</h5>
-                        <small>1 April, 2023 - 05:30</small>
-                    </div>
-                </div>
-            </div>
-        </article>
-
+            </article>
+        <?php endwhile ?>
     </div>
 </section>
 <!--END OF POST-->
 
 <section class="category__buttons">
     <div class="container category__buttons-container">
-        <a href="" class="category__button">Desktop</a>
-        <a href="" class="category__button">Laptops</a>
-        <a href="" class="category__button">CCTV</a>
-        <a href="" class="category__button">Intercom</a>
-        <a href="" class="category__button">Biometrics</a>
+        <?php
+        $all_categories = "SELECT * FROM categories";
+        $all_categories_result = mysqli_query($connection, $all_categories);
+        ?>
+        <?php while ($category = mysqli_fetch_assoc($all_categories_result)): ?>
+            <a href="<?= ROOT_URL ?>category-posts.php?id=<?= $category['id'] ?>" class="category__button">
+                <?= $category['title'] ?>
+            </a>
+        <?php endwhile ?>
     </div>
 </section>
 <!--END OF CATEGORY BUTTONS-->

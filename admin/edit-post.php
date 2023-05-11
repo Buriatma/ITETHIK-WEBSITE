@@ -7,7 +7,7 @@ $categories = mysqli_query($connection, $category_query);
 if (isset($_GET['id'])) {
     $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
     $query = "SELECT * FROM posts WHERE id = $id";
-    $result = mysqli_query($connection, $post_query);
+    $result = mysqli_query($connection, $query);
     $post = mysqli_fetch_assoc($result);
 } else {
     header('location:' . ROOT_URL . 'admin/');
@@ -23,12 +23,12 @@ if (isset($_GET['id'])) {
             <input type="hidden" name="id" value="<?= $post['id'] ?>">
             <input type="hidden" name="previous_thumbnail_name" value="<?= $post['thumbnail'] ?>">
             <input type="text" name="title" value="<?= $post['title'] ?>" placeholder="Title">
-            <select>
+            <select name="category">
                 <?php while ($category = mysqli_fetch_assoc($categories)): ?>
                     <option value="<?= $category['id'] ?>"><?= $category['title'] ?></option>
                 <?php endwhile ?>
             </select>
-            <textarea rows="10" <?= $post['body'] ?> name="body" placeholder="Body"></textarea>
+            <textarea rows="10" name="body" placeholder="Body"><?= $post['body'] ?></textarea>
             <div class="form__control inline">
                 <input type="checkbox" name="is_featured" value="1" id="is_featured" checked>
                 <label for="is_featured">Featured</label>

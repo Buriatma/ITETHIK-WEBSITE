@@ -1,7 +1,8 @@
 <?php
 include 'config/header.php';
 
-$current_user_id = $_SESSION['user_id'];
+$current_user_id = $_SESSION['user-id'];
+
 $query = "SELECT id , title , category_id FROM posts WHERE author_id=$current_user_id ORDER BY id DESC";
 
 $posts = mysqli_query($connection, $query);

@@ -1,9 +1,10 @@
 <?php
-include 'config/header.php';
 
-if (isset($_GET['id'])) {
-    $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
-    $query = "SELECT * FROM posts WHERE category_id = $id ORDER BY date_time DESC";
+require 'config/header.php';
+
+if (isset($_GET['search']) && isset($_GET['submit'])) {
+    $search = filter_var($_GET['search'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $query = "SELECT * FROM posts WHERE title LIKE '%$search%' ORDER BY date_time DESC";
     $posts = mysqli_query($connection, $query);
 } else {
     header('location: ' . ROOT_URL . 'all-blogs.php');
@@ -12,20 +13,8 @@ if (isset($_GET['id'])) {
 
 ?>
 
-<header class="category__title">
-    <h2>
-        <?php
-        $category_id = $id;
-        $category_query = "SELECT * FROM categories WHERE id = $category_id";
-        $category_result = mysqli_query($connection, $category_query);
-        $category = mysqli_fetch_assoc($category_result);
-        echo $category['title'];
-        ?>
-    </h2>
-</header>
-
 <?php if (mysqli_num_rows($posts) > 0): ?>
-    <section class="posts">
+    <section class="posts section__extra-margin">
         <div class="container posts__container">
 
             <?php while ($post = mysqli_fetch_assoc($posts)): ?>
@@ -34,6 +23,16 @@ if (isset($_GET['id'])) {
                         <img src="assets/images/blog-posts-images/<?= $post['thumbnail'] ?>">
                     </div>
                     <div class="post__info">
+                        <?php
+                        $category_id = $post['category_id'];
+                        $category_query = "SELECT * FROM categories WHERE id = $category_id";
+                        $category_result = mysqli_query($connection, $category_query);
+                        $category = mysqli_fetch_assoc($category_result);
+                        ?>
+
+                        <a href="<?= ROOT_URL ?>category-posts.php?id=<?= $post['category_id'] ?>" class="category__button">
+                            <?= $category['title'] ?>
+                        </a>
                         <h3 class="post__title">
                             <a href="<?= ROOT_URL ?>post.php?id=<?= $post['id'] ?>">
                                 <?= $post['title'] ?>
@@ -67,11 +66,10 @@ if (isset($_GET['id'])) {
         </div>
     </section>
 <?php else: ?>
-    <div class="alert__message error lg">
-        <p>No posts found for this category</p>
+    <div class="alert__message error lg section__extra-margin">
+        <p>No posts found for this search</p>
     </div>
 <?php endif ?>
-<!--END OF POST-->
 
 <section class="category__buttons">
     <div class="container category__buttons-container">
@@ -86,7 +84,6 @@ if (isset($_GET['id'])) {
         <?php endwhile ?>
     </div>
 </section>
-<!--END OF CATEGORY BUTTONS-->
 
 <?php
 include 'config/footer.php'
