@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
     if (!$firstname || !$lastname) {
         $_SESSION['edit-user'] = "Invalid Input";
     } else {
-        $query = "UPDATE users SET firstname=$firstname , lastname=$lastname , is_admin=$is_admin WHERE id=$id LIMIT 1";
+        $query = "UPDATE users SET firstname='$firstname' , lastname='$lastname' , is_admin=$is_admin WHERE id=$id LIMIT 1";
         $result = mysqli_query($connection, $query);
 
         if (mysqli_errno($connection)) {

@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
     if (!$title || !$description) {
         $_SESSION['edit-category'] = "Invalid Input";
     } else {
-        $query = "UPDATE categories SET title=$title , description=$description WHERE id=$id LIMIT 1";
+        $query = "UPDATE categories SET title='$title' , description='$description' WHERE id=$id LIMIT 1";
         $result = mysqli_query($connection, $query);
 
         if (mysqli_errno($connection)) {

@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
     } else {
 
         if ($thumbnail['name']) {
-            $previous_thumbnail_path = '../assets/images/blog-posts-images/' . $previous_thumbnail_name;
+            $previous_thumbnail_path = '../../assets/images/blog-posts-images/' . $previous_thumbnail_name;
             if ($previous_thumbnail_path) {
                 unlink($previous_thumbnail_path);
             }
@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) {
 
         $thumbmnail_name = $thumbnail['name'];
         $thumbnail_tmp_name = $avatar['tmp_name'];
-        $thumbnail_destination_path = '../assets/images/blog-posts-images/' . $thumbmnail_name;
+        $thumbnail_destination_path = '../../assets/images/blog-posts-images/' . $thumbmnail_name;
 
         $allowed_files = ["png", "jpg", "jpeg"];
         $extension = explode('.', $thumbmnail_name);

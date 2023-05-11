@@ -73,7 +73,7 @@ $posts = mysqli_query($connection, $query);
                         </a>
                     </li>
                     <li><a href="manage-categories.php"><i class="uil uil-list-ul"></i>
-                            <h5>Manage Users</h5>
+                            <h5>Manage Categories</h5>
                         </a>
                     </li>
                 <?php else: {
