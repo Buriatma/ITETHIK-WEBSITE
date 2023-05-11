@@ -18,12 +18,11 @@ if (isset($_GET['id'])) {
         }
     }
 
-    $thumbnail_query = "SELECT thumbnail FROM posts WHERE author_id=$id";
-    $thumbnail_result = mysqli_query($connection, $thumbnail_query);
+    $thumbnails_query = "SELECT thumbnail FROM posts WHERE author_id=$id";
+    $thumbnails_result = mysqli_query($connection, $thumbnails_query);
 
-    if (mysqli_num_rows($thumbnail_result) > 0) {
-        while ($thumbnail = mysqli_fetch_assoc($thumbnail_result)) {
-            $thumbnail_name = $thumbnail['thumbnail'];
+    if (mysqli_num_rows($thumbnails_result) > 0) {
+        while ($thumbnail = mysqli_fetch_assoc($thumbnails_result)) {
             $thumbnail_path = '../assets/images/blog-posts-images/' . $thumbnail['thumbnail'];
 
             if ($thumbnail_path) {

@@ -35,5 +35,5 @@ if (isset($_POST['submit'])) {
 
 }
 
-header('location: ' . ROOT_URL . 'admin/manage-users.php');
+header('location: ' . ROOT_URL . 'admin/manage-categories.php');
 die();

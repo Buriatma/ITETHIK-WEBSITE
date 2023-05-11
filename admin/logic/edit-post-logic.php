@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
     $is_featured = filter_var($_POST['is_featured'], FILTER_SANITIZE_NUMBER_INT);
     $thumbnail = $_FILES['thumbnail'];
 
-    $is_featured = $is_featured ? 1 : 0;
+    $is_featured = $is_featured == 1 ?: 0;
 
     if (!$title) {
         $_SESSION['edit-post'] = "Enter post title";
@@ -27,24 +27,24 @@ if (isset($_POST['submit'])) {
             if ($previous_thumbnail_path) {
                 unlink($previous_thumbnail_path);
             }
-        }
 
-        $thumbmnail_name = $thumbnail['name'];
-        $thumbnail_tmp_name = $avatar['tmp_name'];
-        $thumbnail_destination_path = '../../assets/images/blog-posts-images/' . $thumbmnail_name;
+            $thumbnail_name = $thumbnail['name'];
+            $thumbnail_tmp_name = $thumbnail['tmp_name'];
+            $thumbnail_destination_path = '../../assets/images/blog-posts-images/' . $thumbnail_name;
 
-        $allowed_files = ["png", "jpg", "jpeg"];
-        $extension = explode('.', $thumbmnail_name);
-        $extension = end($extension);
+            $allowed_files = ["png", "jpg", "jpeg"];
+            $extension = explode('.', $thumbnail_name);
+            $extension = end($extension);
 
-        if (in_array($extension, $allowed_files)) {
-            if ($thumbnail['size'] < 2000000) {
-                move_uploaded_file($thumbnail_tmp_name, $thumbnail_destination_path);
+            if (in_array($extension, $allowed_files)) {
+                if ($thumbnail['size'] < 2000000) {
+                    move_uploaded_file($thumbnail_tmp_name, $thumbnail_destination_path);
+                } else {
+                    $_SESSION['edit-post'] = "Thumbnail size must be less than 2mb";
+                }
             } else {
-                $_SESSION['edit-post'] = "Thumbnail size must be less than 2mb";
+                $_SESSION['edit-post'] = "Thumbnail must be PNG or JPG or JPEG";
             }
-        } else {
-            $_SESSION['edit-post'] = "Thumbnail must be PNG or JPG or JPEG";
         }
     }
 
@@ -58,15 +58,16 @@ if (isset($_POST['submit'])) {
             $zero_all_is_featured_result = mysqli_query($connection, $zero_all_is_featured_query);
         }
 
-        $thumbnail_to_insert = $thumbmnail_name ?? $previous_thumbnail_name;
+        $thumbnail_to_insert = $thumbnail_name ?? $previous_thumbnail_name;
 
         $query = "UPDATE posts SET title = '$title' , body = '$body' , thumbnail =  '$thumbnail_to_insert' , category_id = $category_id , is_featured = $is_featured WHERE id = $id LIMTI 1";
 
         $result = mysqli_query($connection, $query);
 
-        if (!mysqli_errno($connection)) {
-            $_SESSION['edit-post-success'] = "Post edited successfully";
-        }
+    }
+
+    if (!mysqli_errno($connection)) {
+        $_SESSION['edit-post-success'] = "Post edited successfully";
     }
 
 }

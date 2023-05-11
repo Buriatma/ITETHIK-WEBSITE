@@ -1,6 +1,6 @@
 <?php
 include 'config/header.php'
-?>
+    ?>
 
 
 <section class="featured">
@@ -154,4 +154,4 @@ include 'config/header.php'
 
 <?php
 include 'config/footer.php'
-?>
+    ?>
