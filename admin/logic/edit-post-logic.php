@@ -60,7 +60,7 @@ if (isset($_POST['submit'])) {
 
         $thumbnail_to_insert = $thumbnail_name ?? $previous_thumbnail_name;
 
-        $query = "UPDATE posts SET title='$title' , body='$body' , thumbnail='$thumbnail_to_insert' , category_id=$category_id , is_featured=$is_featured WHERE id=$id LIMTI 1";
+        $query = "UPDATE posts SET title='$title' , body='$body' , thumbnail='$thumbnail_to_insert' , category_id=$category_id , is_featured=$is_featured WHERE id=$id LIMIT 1";
 
         $result = mysqli_query($connection, $query);
 
