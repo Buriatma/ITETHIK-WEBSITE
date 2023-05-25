@@ -151,19 +151,6 @@ body{
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: gradientAnimation 5s linear infinite;
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 .row{
@@ -240,7 +227,7 @@ body{
   font-size: var(--fontSize-7);
 }
 
-.pricing-column{
+.services-column{
   padding: 2% 2%;
 }
 
@@ -250,6 +237,7 @@ body{
   border-color: rgb(46, 49, 182);
   border-width: 2px;
   font-weight: 400;
+  font-size: 20px;
 
   transition: transform 0.3s ease;
   box-shadow: 0 2px 8px rgba(114, 113, 113, 0.2); 
@@ -257,7 +245,7 @@ body{
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 12px rgb(37, 235, 235); 
+  box-shadow: 0 10px 20px rgb(37, 235, 235); 
   background-color: rgb(28, 1, 83);
 }
 
@@ -272,4 +260,26 @@ body{
 
 /*-----------------------------------*\
   #TESTIMONIALS
+\*-----------------------------------*/
+
+#testimonials{
+  text-align: center;
+  background-color: var(--bg-violet);
+  color: #fff;
+}
+.carousel-item {
+  padding: 14% 15%;
+  
+}
+.testis h2{
+  font-size: 2.5rem;
+  line-height: 1.5;
+  font-weight: bold;
+}
+.review{
+  padding-top: 30px;
+}
+
+/*-----------------------------------*\
+  #PROJECTS
 \*-----------------------------------*/
