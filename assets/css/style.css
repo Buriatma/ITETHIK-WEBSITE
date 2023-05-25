@@ -268,8 +268,12 @@ body{
   color: #fff;
 }
 .carousel-item {
-  padding: 14% 15%;
+  padding: 14% 15% 18% 15%;
   
+}
+.carousel-inner {
+  height: 600px; /* Set the desired fixed height for the carousel */
+  overflow: hidden; /* Hide any overflowing content */
 }
 .testis h2{
   font-size: 2.5rem;
@@ -283,3 +287,20 @@ body{
 /*-----------------------------------*\
   #PROJECTS
 \*-----------------------------------*/
+
+#projects{
+  padding: 100px;
+  text-align: center;
+}
+
+.projects-heading{
+  font-size: 3.5rem;
+  line-height: 1.5;  
+  color: var(--text-orange);
+}
+
+.projects-subheading{
+  color: var(--text-white);
+  font-size: var(--fontSize-7);
+}
+
