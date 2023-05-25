@@ -159,7 +159,7 @@ body{
 }
 
 .btn-orange:hover{
-  background-color: rgb(214, 207, 193);
+  background-color: var(--text-white);
 }
 
 /*-----------------------------------*\
@@ -175,6 +175,28 @@ body{
     font-size: 3.5rem;
     line-height: 1.5;  
     color: var(--text-white);
+
+}
+
+.gradient-text {
+  font-size: 3.5rem;
+  background-image: linear-gradient(45deg, #9a51ff, orange);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientAnimation 5s linear infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .row{
@@ -201,7 +223,7 @@ body{
 \*-----------------------------------*/
 
 #about{
-  padding: 5% 1%;
+  padding: 5% 1% 10% 1%;
   background-color: var(--bg-violet);
   position: relative;
 }
