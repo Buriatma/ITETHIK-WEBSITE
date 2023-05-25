@@ -132,6 +132,7 @@ body{
 
 .navbar{ background-color: var(--bg-violet); }
 
+
 .navbar .nav-link{
   color: var(--text-white);
 }
