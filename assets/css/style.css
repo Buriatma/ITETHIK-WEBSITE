@@ -14,10 +14,12 @@
   --bg-dark-purple: hsla(260, 62%, 11%, 1);
   --bg-violet: hsla(259, 61%, 14%, 1);
   --bg-light-blue: hsla(202, 100%, 50%, 1);
+  --color-aqua: aqua;  
 
   /* text color */
   --text-white: hsla(0, 0%, 100%, 1);
   --text-black: hsla(0, 0%, 0%, 1);
+  --text-orange: orange;
 
   /* border color */
 
@@ -125,7 +127,6 @@ body{
 \*-----------------------------------*/
 
 
-
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
@@ -139,6 +140,7 @@ body{
 
 .navbar-brand{
   color: var(--text-white);
+  margin-left: 5px;
 }
 
 .navbar-nav {
@@ -152,7 +154,8 @@ body{
 }
 
 .btn-orange{
-  background-color: orange;
+  background-color: var(--text-orange);
+  margin-right: 5px;
 }
 
 .btn-orange:hover{
@@ -160,13 +163,16 @@ body{
 }
 
 /*-----------------------------------*\
-  #HERO
+#LANDING
 \*-----------------------------------*/
 
+#landing{
+  /* height: 100vh; */
+  margin-bottom: 200px;
+}
+
 .big-heading{
-    /* font-weight: bold; */
     font-size: 3.5rem;
-    /* display: block; */
     line-height: 1.5;  
     color: var(--text-white);
 }
@@ -178,7 +184,7 @@ body{
 }
 
 .title-img{
-  width: 90%;
+  width: 95%;
   transform: rotate(25deg);
   /* padding-bottom: 50px; */
   position: relative;
@@ -189,30 +195,38 @@ body{
   margin: 5% 3% 5% 0;
 }
 
-/*-----------------------------------*\
-  #PROCESS
-\*-----------------------------------*/
-
-
-
-
 
 /*-----------------------------------*\
-  #WORK
+  #ABOUT
 \*-----------------------------------*/
 
+#about{
+  padding: 5% 1%;
+  background-color: var(--bg-violet);
+  position: relative;
+}
 
+.about-heading{
+  font-size: 3.5rem;
+  line-height: 1.5;  
+  color: var(--text-orange);
+}
 
+.about-img{
+  width: 80%;
+  position: relative;
+  left: 30%;
+}
 
+.container.about{
+  color: var(--text-white);
+  font-size: var(--fontSize-7);
+}
 
-/*-----------------------------------*\
-  #FOOTER
-\*-----------------------------------*/
+.row .about{
+  padding: 0;
+}
 
-
-
-
-
-/*-----------------------------------*\
-  #MEDIA QUERIES
-\*-----------------------------------*/
+.about i{
+  color: var(--color-aqua);
+}
