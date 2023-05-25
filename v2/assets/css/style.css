@@ -1,0 +1,306 @@
+:root{
+
+  /* background color */
+  --bg-dark-purple: hsla(260, 62%, 11%, 1);
+  --bg-violet: hsla(259, 61%, 14%, 1);
+  --bg-light-violet: rgb(35, 14, 77);
+  --bg-light-blue: hsla(202, 100%, 50%, 1);
+  --color-aqua: rgb(4, 231, 231);  
+
+  /* text color */
+  --text-white: hsla(0, 0%, 100%, 1);
+  --text-black: hsla(0, 0%, 0%, 1);
+  --text-orange: orange;
+
+  /* font family */
+  --fontFamily-open-sans: 'Open Sans', sans-serif;
+
+  /* font size */
+  --fontSize-1: 4rem;
+  --fontSize-2: 3.2rem;
+  --fontSize-3: 2.4rem;
+  --fontSize-4: 2rem;
+  --fontSize-5: 1.8rem;
+  --fontSize-6: 1.6rem;
+  --fontSize-7: 1.4rem;
+}
+
+
+/*-----------------------------------*\
+  #RESET
+\*-----------------------------------*/
+*, *::before, *::after{
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+li{
+  list-style: none;
+}
+
+a, 
+img,
+span, 
+button, 
+ion-icon{
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {height: auto;};
+
+input,
+button{
+  background: none;
+  border: none;
+  font: inherit;
+}
+
+input{
+  width: 100%;
+  outline: none;
+}
+
+button{
+  cursor: pointer;
+}
+
+ion-icon{
+  pointer-events: none;
+}
+
+address{
+  font-style: normal;
+}
+
+body{
+  background-color: var(--bg-dark-purple);
+}
+
+
+/*-----------------------------------*\
+  #REUSED STYLE
+\*-----------------------------------*/
+
+
+/*-----------------------------------*\
+  #HEADER
+\*-----------------------------------*/
+
+.navbar, .nav-link{ background-color: var(--bg-violet); 
+  font-size: 17px;
+  color: var(--text-white);
+}
+
+.navbar .nav-link:hover{
+  color: var(--color-aqua);
+}
+
+.navbar-brand{
+  color: var(--text-white);
+  margin-left: 5px;
+}
+.navbar-brand:hover{
+  color: var(--color-aqua);
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-nav .nav-link {
+  margin: 0 10px;
+}
+
+.btn-orange{
+  background-color: var(--text-orange);
+  margin-right: 5px;
+}
+
+.btn-orange:hover{
+  background-color: var(--text-white);
+  color: var(--text-black);
+}
+
+/*-----------------------------------*\
+#LANDING
+\*-----------------------------------*/
+
+#landing{
+  /* height: 100vh; */
+  margin-bottom: 200px;
+}
+
+.big-heading{
+    font-size: 3.5rem;
+    line-height: 1.5;  
+    color: var(--text-white);
+
+}
+
+.gradient-text {
+  font-size: 3.5rem;
+  background-image: linear-gradient(45deg, #9a51ff, orange);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.row{
+  padding-top: 6rem;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.title-img{
+  width: 95%;
+  transform: rotate(20deg);
+  /* padding-bottom: 50px; */
+  position: relative;
+  left: 18%;
+}
+
+.Download-button{
+  margin: 5% 3% 5% 0;
+}
+
+
+/*-----------------------------------*\
+  #ABOUT
+\*-----------------------------------*/
+
+#about{
+  padding: 5% 1% 10% 1%;
+  background-color: var(--bg-violet);
+  position: relative;
+}
+
+.about-heading{
+  font-size: 3.5rem;
+  line-height: 1.5;  
+  color: var(--text-orange);
+}
+
+.about-img{
+  width: 69%;
+  position: relative;
+  left: 30%;
+}
+
+.container.about{
+  color: var(--text-white);
+  font-size: var(--fontSize-7);
+}
+
+.row .about{
+  padding: 0;
+}
+
+.about i{
+  color: var(--color-aqua);
+}
+
+/*-----------------------------------*\
+  #SERVICES
+\*-----------------------------------*/
+
+#services{
+  padding: 100px;
+  text-align: center;
+}
+
+.services-heading{
+  font-size: 3.5rem;
+  line-height: 1.5;  
+  color: var(--text-orange);
+}
+
+.subheading{
+  color: var(--text-white);
+  font-size: var(--fontSize-7);
+}
+
+.services-column{
+  padding: 2% 2%;
+}
+
+.card{
+  background-color: var(--bg-light-violet);
+  color: var(--text-white);
+  border-color: rgb(46, 49, 182);
+  border-width: 2px;
+  font-weight: 400;
+  font-size: 20px;
+
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 8px rgba(114, 113, 113, 0.2); 
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgb(37, 235, 235); 
+  background-color: rgb(28, 1, 83);
+}
+
+.card-header h3{
+  margin-top: 15px;
+  color: orange;
+}
+
+#services .row{
+  padding-top: 3rem;
+}
+
+/*-----------------------------------*\
+  #TESTIMONIALS
+\*-----------------------------------*/
+
+#testimonials{
+  text-align: center;
+  background-color: var(--bg-violet);
+  color: #fff;
+}
+.carousel-item {
+  padding: 14% 15% 18% 15%;
+  
+}
+.carousel-inner {
+  height: 600px; /* Set the desired fixed height for the carousel */
+  overflow: hidden; /* Hide any overflowing content */
+}
+.testis h2{
+  font-size: 2.5rem;
+  line-height: 1.5;
+  font-weight: bold;
+}
+.review{
+  padding-top: 30px;
+}
+
+/*-----------------------------------*\
+  #PROJECTS
+\*-----------------------------------*/
+
+#projects{
+  padding: 100px;
+  text-align: center;
+}
+
+.projects-heading{
+  font-size: 3.5rem;
+  line-height: 1.5;  
+  color: var(--text-orange);
+}
+
+.projects-subheading{
+  color: var(--text-white);
+  font-size: var(--fontSize-7);
+}
+
