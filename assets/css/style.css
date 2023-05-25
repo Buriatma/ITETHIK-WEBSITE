@@ -13,6 +13,7 @@
   /* background color */
   --bg-dark-purple: hsla(260, 62%, 11%, 1);
   --bg-violet: hsla(259, 61%, 14%, 1);
+  --bg-light-violet: rgb(35, 14, 77);
   --bg-light-blue: hsla(202, 100%, 50%, 1);
   --color-aqua: aqua;  
 
@@ -160,6 +161,7 @@ body{
 
 .btn-orange:hover{
   background-color: var(--text-white);
+  color: var(--text-black);
 }
 
 /*-----------------------------------*\
@@ -251,4 +253,45 @@ body{
 
 .about i{
   color: var(--color-aqua);
+}
+
+/*-----------------------------------*\
+  #SERVICES
+\*-----------------------------------*/
+
+#services{
+  padding: 100px;
+  text-align: center;
+}
+
+.services-heading{
+  font-size: 3.5rem;
+  line-height: 1.5;  
+  color: var(--text-orange);
+}
+
+.subheading{
+  color: var(--text-white);
+  font-size: var(--fontSize-7);
+}
+
+.pricing-column{
+  padding: 2% 2%;
+}
+
+.card{
+  background-color: var(--bg-light-violet);
+  color: var(--text-white);
+  border-color: rgb(46, 49, 182);
+  border-width: 2px;
+  font-weight: 400;
+}
+
+.card-header h3{
+  margin-top: 15px;
+  color: orange;
+}
+
+#services .row{
+  padding-top: 3rem;
 }
