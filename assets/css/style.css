@@ -178,14 +178,14 @@ body{
 }
 
 .row{
-  padding-top: 4.5rem;
+  padding-top: 6rem;
   padding-left: 10%;
   padding-right: 10%;
 }
 
 .title-img{
   width: 95%;
-  transform: rotate(25deg);
+  transform: rotate(20deg);
   /* padding-bottom: 50px; */
   position: relative;
   left: 18%;
