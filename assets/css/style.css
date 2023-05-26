@@ -424,7 +424,7 @@ body.nav-active {
   gap: 50px;
 }
 
-.fotter-text {
+.footer-text {
   margin-block: 15px;
 }
 
@@ -440,7 +440,7 @@ body.nav-active {
   font-size: 3.2rem;
 }
 
-.fotter-btn {
+.footer .btn {
   font-size: var(--fontSize-5);
   padding-inline: 60px;
 }
@@ -450,23 +450,129 @@ body.nav-active {
   gap: 15px;
 }
 
-.fotter-bottom {
+.footer-bottom {
   padding-block: 40px;
-  border-block-top: 1px solid var(--border-white-alpha-10); 
+  border-block-start: 1px solid var(--border-white-alpha-10); 
 }
 
-.fotter-bottom .link {
+.footer-bottom .link {
+  display: inline-block;
   color: var(--text-sunglow);
 }
 
 
-.fotter-bottom-list {
+.footer-bottom-list {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
-  margin-inline-start: 20px;
+  margin-block-start: 20px;
 }
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
+
+/* responsive for larger than 575px screen */
+
+@media (min-width: 575px){
+  /* REUSED STYLE */
+
+  .container{
+    max-width: 500px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  /* HEADER */
+
+  .header .container{
+    max-width: unset;
+  }
+
+
+}
+
+
+/* responsive for larger than 768px screen */ 
+
+@media (min-width: 768px){
+  /* CUSTOM PEROPERTY */
+
+  :root{
+    /* typography */
+    --fontSize-1: 5.5rem;
+    --fontSize-2: 4rem;
+
+    /* section spacing */
+    --section-spacing: 150px;
+  }
+
+  /* REUSED STYLE */
+  .container{max-width: 720px;}
+
+  .section-text{
+    max-width: 500px;
+    margin-inline: auto;
+  }
+
+  .grid-list{grid-template-columns: 1fr 1fr;}
+
+  .btn-secondary{ 
+    color: var(--text-white);
+    height: 52px;
+    border: 2px solid var(--border-blue-jeans);
+    padding-inline: 40px;
+  }
+
+  .btn-secondary:is(:hover, :focus-visible){
+    background-color: var(--bg-blue-jeans);
+  }
+
+  /* HEADER */
+  .header .btn{
+    display: grid;
+    margin-inline: auto 30px;
+  }
+
+  /* HERO */
+  .hero { padding-block: 180px; }
+  .hero-content { max-width: 560px; }
+  .hero .input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .hero .btn {
+    margin-block-start: 0;
+    min-width: max-content;
+  }
+
+  .hero-banner {
+    position: relative;
+    max-width: 540px;
+    margin-inline: auto;
+    }
+
+  .hero .shape {
+    display: block;
+    position: absolute;
+    filter: var(--shadow-2);
+  }
+
+  .hero .shape-1 {
+    width: 13%;
+    top: 350px;
+    left: 80px;
+  }
+  .hero .shape-2 {
+    width: 16%;
+    top: 440px;
+    left: -20px;
+  }
+  .hero .shape-3{
+    width: 20%;
+    bottom: -20px;
+    left: 80px;
+  }
+
+}
