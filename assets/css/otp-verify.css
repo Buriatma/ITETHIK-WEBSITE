@@ -16,14 +16,14 @@ body {
     background: #4070f4;
 }
 
-:where(.container, form, .input-field, header) {
+:where(.container, form, .input-field-otp, header) {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.container {
+.container-otp {
     background: #fff;
     padding: 30px 65px;
     border-radius: 12px;
@@ -46,12 +46,12 @@ body {
     font-weight: 500;
 }
 
-form .input-field {
+form .input-field-otp {
     flex-direction: row;
     column-gap: 10px;
 }
 
-.input-field input {
+.input-field-otp input {
     height: 45px;
     width: 42px;
     border-radius: 6px;
@@ -61,12 +61,12 @@ form .input-field {
     border: 1px solid #ddd;
 }
 
-.input-field input:focus {
+.input-field-otp input:focus {
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
 
-.input-field input::-webkit-inner-spin-button,
-.input-field input::-webkit-outer-spin-button {
+.input-field-otp input::-webkit-inner-spin-button,
+.input-field-otp input::-webkit-outer-spin-button {
     display: none;
 }
 
