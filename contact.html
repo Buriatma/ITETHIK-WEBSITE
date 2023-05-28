@@ -1,248 +1,333 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth" dir="ltr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ItEthik - An It Ethnicity</title>
- 
-<link rel="shortcut icon" type="image/x-icon" href="assets/images/monogram (1).png">
-    <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet">
-    
-     <!-- Plugins css -->
-    <link rel="stylesheet" href="./assets/css/mobilemenu.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-    <!-- Tailwind css -->
-    <link rel="stylesheet" href="./assets/css/styles.css" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ItEthik - An It Ethnicity</title>
+
+  <link rel="shortcut icon" type="image/x-icon" href="assets/images/monogram (1).png">
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap"
+    rel="stylesheet">
+
+  <!-- Plugins css -->
+  <link rel="stylesheet" href="./assets/css/mobilemenu.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <!-- Tailwind css -->
+  <link rel="stylesheet" href="./assets/css/styles.css" />
 
 
-    <script>
-      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-      if (localStorage.getItem("theme-color") === "dark" || (!("theme-color" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-        document.documentElement.classList.add("dark");
-        document.getElementById("light__to--dark")?.classList.add("dark--version");
-      } 
-      if (localStorage.getItem("theme-color") === "light") {
-        document.documentElement.classList.remove("dark");
-        document.getElementById("light__to--dark")?.classList.remove("dark--version");
-      } 
-    </script>
-  </head>
-  <body class="font-rubik dark:bg-dark_primary_bg">
+  <script>
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (localStorage.getItem("theme-color") === "dark" || (!("theme-color" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      document.documentElement.classList.add("dark");
+      document.getElementById("light__to--dark")?.classList.add("dark--version");
+    }
+    if (localStorage.getItem("theme-color") === "light") {
+      document.documentElement.classList.remove("dark");
+      document.getElementById("light__to--dark")?.classList.remove("dark--version");
+    } 
+  </script>
+</head>
 
-    <!-- Preloader start -->
-    <div id="preloader">
-        <div class="loader--border"></div>
-    </div>
-    <!-- Preloader end -->
+<body class="font-rubik dark:bg-dark_primary_bg">
 
-      <!-- Header area start -->
-      <header class="absolute w-full left-0 top-0">
-        <div class="header__sticky py-5">
-          <div class="container mx-auto">
-            <div class="flex justify-between items-center">
-                <div class="logo">
-                    <a href="./index.html">
-                      <img class="hidden dark:block" src="assets/images/itethik-white.png" width="120" height="30" alt="ItEthik" loading="lazy">
-                    </a>
-                </div>
-                <div class="flex items-center md:hidden">
-                  <nav >
-                      <ul class="flex items-center">
-                          <li>
-                            <a href="index.html" class="text-[17px] xl:text-[19px] text-white dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Home</a>
-                          </li>
-                          <li>
-                            <a href="about.html" class="text-[17px] xl:text-[19px] text-white dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">About</a>
-                          </li>
-                          </li>
-                          <li>
-                            <a href="services.html" class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Services</a>
-                          </li>
-                          <li>
-                            <a href="portfolio.html" class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Portfolio</a>
-                          </li>
-                          <li>
-                            <a href="blog.html" class="text-[17px] xl:text-[19px] text-white dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Blog</a>
-                          </li>
-                          <li><a href="contact.html" class="text-[17px] xl:text-[19px] text-orange dark:text-orange font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Contact</a></li>
-                      </ul> 
-                  </nav>
-                  <button class="flex bg-accent1 lg:px-[15px] px-[12px] xl:py-[12px] py-[10px] rounded-[2rem] text-[16px] xl:text-[18px] font-medium text-white items-center ltr:ml-[32px] rtl:mr-[32px] transition duration-300 relative after:absolute :after:content-[''] after:bg-primary after:h-full after:w-full after:bottom-0 after:left-0 after:rounded-[2rem] after:trasition after:duration-300 after:opacity-0 hover:after:opacity-[1]">
-                    <span class="icon bg-[#EFEBEB] text-accent1 w-[34px] h-[34px] rounded-full flex items-center justify-center ltr:xl:mr-[15px] ltr:mr-[10px] rtl:xl:ml-[15px] rtl:ml-[10px] relative z-[8] flex-shrink-0">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                    </span>
-                    
-                    <span class="ltr:xl:pr-[5px] ltr:lg:pr-[5px] rtl:xl:pl-[5px] rtl:lg:pl-[5px] relative z-[8] flex-shrink-0"><a href="login.html">Sign-in</a></span>
-                  </button>
-                </div>
-                <div class="lg:hidden">
-                  <button class="offcanvas__header--menu__open--btn text-primary dark:text-white " data-offcanvas>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-                  </button>
-                </div>
-            </div>
-        </div>
-         <!-- Start Offcanvas header menu -->
-        <div class="offcanvas__header lg:hidden dark:bg-gray-800">
-          <div class="offcanvas__inner">
-              <div class="offcanvas__logo">
-                  <a class="offcanvas__logo_link" href="index.html">
-                      <img class="dark:hidden" src="assets/images/itethik-blue.png" alt="ItEthik" width="158" height="36">
-                      <img class="hidden dark:block" src="assets/images/itethik-white.png" alt="ItEthik" width="158" height="36">
-                  </a>
-                  <button class="offcanvas__close--btn dark:text-white" data-offcanvas>close</button>
-              </div>
-              <nav class="offcanvas__menu">
-                  <ul class="offcanvas__menu_ul">
-                      <li class="offcanvas__menu_li">
-                          <a class="offcanvas__menu_item dark:text-white" href="index.html">Home</a>
-                      </li>
-                      <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-orange" href="about.html">About</a></li>
-                      <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white" href="services.html">Services</a></li>
-                      <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white" href="portfolio.html">Portfolio</a></li>
-                      <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white" href="blog.html">Blog</a></li>
-                      <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-orange" href="contact.html">Contact</a></li>
-                  </ul>
-                  <button class="flex mx-auto bg-accent1 lg:px-[15px] px-[12px] xl:py-[12px] py-[10px] rounded-[2rem] text-[16px] xl:text-[18px] font-medium text-white items-center transition duration-300 relative after:absolute :after:content-[''] after:bg-primary after:h-full after:w-full after:bottom-0 after:left-0 after:rounded-[2rem] after:trasition after:duration-300 after:opacity-0 hover:after:opacity-[1] mt-[30px]">
-                    <span class="icon bg-[#EFEBEB] text-accent1 w-[34px] h-[34px] rounded-full flex items-center justify-center ltr:xl:mr-[15px] ltr:mr-[10px] rtl:xl:ml-[15px] rtl:ml-[10px] relative z-[8] flex-shrink-0">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                    </span>
-                    <span class="ltr:xl:pr-[5px] ltr:lg:pr-[5px] rtl:xl:pl-[5px] rtl:lg:pl-[5px] relative z-[8] flex-shrink-0"><a href="login.html">Sign-in</a></span>
-                  </button>
-              </nav>
+  <!-- Preloader start -->
+  <div id="preloader">
+    <div class="loader--border"></div>
+  </div>
+  <!-- Preloader end -->
+
+  <!-- Header area start -->
+  <header class="absolute w-full left-0 top-0">
+    <div class="header__sticky py-5">
+      <div class="container mx-auto">
+        <div class="flex justify-between items-center">
+          <div class="logo">
+            <a href="./index.html">
+              <img class="hidden dark:block" src="assets/images/itethik-white.png" width="120" height="30" alt="ItEthik"
+                loading="lazy">
+            </a>
+          </div>
+          <div class="flex items-center md:hidden">
+            <nav>
+              <ul class="flex items-center">
+                <li>
+                  <a href="index.html"
+                    class="text-[17px] xl:text-[19px] text-white dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Home</a>
+                </li>
+                <li>
+                  <a href="about.html"
+                    class="text-[17px] xl:text-[19px] text-white dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">About</a>
+                </li>
+                </li>
+                <li>
+                  <a href="services.html"
+                    class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Services</a>
+                </li>
+                <li>
+                  <a href="portfolio.html"
+                    class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Portfolio</a>
+                </li>
+                <li>
+                  <a href="blog.html"
+                    class="text-[17px] xl:text-[19px] text-white dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Blog</a>
+                </li>
+                <li><a href="contact.html"
+                    class="text-[17px] xl:text-[19px] text-orange dark:text-orange font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Contact</a>
+                </li>
+              </ul>
+            </nav>
+            <button
+              class="flex bg-accent1 lg:px-[15px] px-[12px] xl:py-[12px] py-[10px] rounded-[2rem] text-[16px] xl:text-[18px] font-medium text-white items-center ltr:ml-[32px] rtl:mr-[32px] transition duration-300 relative after:absolute :after:content-[''] after:bg-primary after:h-full after:w-full after:bottom-0 after:left-0 after:rounded-[2rem] after:trasition after:duration-300 after:opacity-0 hover:after:opacity-[1]">
+              <span
+                class="icon bg-[#EFEBEB] text-accent1 w-[34px] h-[34px] rounded-full flex items-center justify-center ltr:xl:mr-[15px] ltr:mr-[10px] rtl:xl:ml-[15px] rtl:ml-[10px] relative z-[8] flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-activity">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </span>
+
+              <span
+                class="ltr:xl:pr-[5px] ltr:lg:pr-[5px] rtl:xl:pl-[5px] rtl:lg:pl-[5px] relative z-[8] flex-shrink-0"><a
+                  href="login.html">Sign-in</a></span>
+            </button>
+          </div>
+          <div class="lg:hidden">
+            <button class="offcanvas__header--menu__open--btn text-primary dark:text-white " data-offcanvas>
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-menu">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            </button>
           </div>
         </div>
-
-    <!-- Main wrapper start -->
-    <main class="md:pb-[90px]">
-
-      <!-- Breadcrumb section start -->
-      <section class="pt-[70px] lg:pt-20">
-        <div class="container mx-auto">
-            <div class="text-center relative">
-                <h1 class="text-[40px] only-md:text-[55px] lg:text-[70px] stroke-white	text-white font-heebo font-bold title-stroke opacity-[0.15] leading-[1] uppercase">Contact</h1>
-                <span class="text-primary dark:text-white text-[25px] only-md:text-[35px] lg:text-[40px] font-heebo font-extrabold absolute left-0 right-0 bottom-0 uppercase"> Contact <span class="text-accent1">ME</span></span>
-            </div>
+      </div>
+      <!-- Start Offcanvas header menu -->
+      <div class="offcanvas__header lg:hidden dark:bg-gray-800">
+        <div class="offcanvas__inner">
+          <div class="offcanvas__logo">
+            <a class="offcanvas__logo_link" href="index.html">
+              <img class="dark:hidden" src="assets/images/itethik-blue.png" alt="ItEthik" width="158" height="36">
+              <img class="hidden dark:block" src="assets/images/itethik-white.png" alt="ItEthik" width="158"
+                height="36">
+            </a>
+            <button class="offcanvas__close--btn dark:text-white" data-offcanvas>close</button>
+          </div>
+          <nav class="offcanvas__menu">
+            <ul class="offcanvas__menu_ul">
+              <li class="offcanvas__menu_li">
+                <a class="offcanvas__menu_item dark:text-white" href="index.html">Home</a>
+              </li>
+              <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-orange"
+                  href="about.html">About</a></li>
+              <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white"
+                  href="services.html">Services</a></li>
+              <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white"
+                  href="portfolio.html">Portfolio</a></li>
+              <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white" href="blog.html">Blog</a>
+              </li>
+              <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-orange"
+                  href="contact.html">Contact</a></li>
+            </ul>
+            <button
+              class="flex mx-auto bg-accent1 lg:px-[15px] px-[12px] xl:py-[12px] py-[10px] rounded-[2rem] text-[16px] xl:text-[18px] font-medium text-white items-center transition duration-300 relative after:absolute :after:content-[''] after:bg-primary after:h-full after:w-full after:bottom-0 after:left-0 after:rounded-[2rem] after:trasition after:duration-300 after:opacity-0 hover:after:opacity-[1] mt-[30px]">
+              <span
+                class="icon bg-[#EFEBEB] text-accent1 w-[34px] h-[34px] rounded-full flex items-center justify-center ltr:xl:mr-[15px] ltr:mr-[10px] rtl:xl:ml-[15px] rtl:ml-[10px] relative z-[8] flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-activity">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </span>
+              <span
+                class="ltr:xl:pr-[5px] ltr:lg:pr-[5px] rtl:xl:pl-[5px] rtl:lg:pl-[5px] relative z-[8] flex-shrink-0"><a
+                  href="login.html">Sign-in</a></span>
+            </button>
+          </nav>
         </div>
-      </section>
-      <!-- Breadcrumb section end -->
-   
-      <!-- Contact form section start -->
-      <section class="py-[70px] lg:py-[100px]" id="contact">
-        <div class="container mx-auto">
+      </div>
+
+      <!-- Main wrapper start -->
+      <main class="md:pb-[90px]">
+
+        <!-- Breadcrumb section start -->
+        <section class="pt-[70px] lg:pt-20">
+          <div class="container mx-auto">
+            <div class="text-center relative">
+              <h1
+                class="text-[40px] only-md:text-[55px] lg:text-[70px] stroke-white	text-white font-heebo font-bold title-stroke opacity-[0.15] leading-[1] uppercase">
+                Contact</h1>
+              <span
+                class="text-primary dark:text-white text-[25px] only-md:text-[35px] lg:text-[40px] font-heebo font-extrabold absolute left-0 right-0 bottom-0 uppercase">
+                Contact <span class="text-accent1">ME</span></span>
+            </div>
+          </div>
+        </section>
+        <!-- Breadcrumb section end -->
+
+        <!-- Contact form section start -->
+        <section class="py-[70px] lg:py-[100px]" id="contact">
+          <div class="container mx-auto">
             <!-- Form wrapper start -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-            <div>
-              <!-- Section title -->
+              <div>
+                <!-- Section title -->
                 <div class="mb-[55px] md:text-center">
-                    <span class="text-accent1 text-[20px] lg:text-[24px] font-medium mb-[10px] lg:mb-[5px]">CONTACT</span>
-                    <h2 class="text:[28px] lg:text-[48px] font-bold font-heebo leading-[36x] lg:leading-[58px] text-[#000248] dark:text-white">Get I contact work 
-                    </h2>
-                    <p class="text-[#636363] dark:text-slate-200 text-[17px] leading-[28px] lg:max-w-[472px] w-full">Promote your blog posts, case udie, and product ouncems
-                      with the the branded videoscustomers coming back for
-                      services Makes best effort.</p>
+                  <span class="text-accent1 text-[20px] lg:text-[24px] font-medium mb-[10px] lg:mb-[5px]">CONTACT</span>
+                  <h2
+                    class="text:[28px] lg:text-[48px] font-bold font-heebo leading-[36x] lg:leading-[58px] text-[#000248] dark:text-white">
+                    Get I contact work
+                  </h2>
+                  <p class="text-[#636363] dark:text-slate-200 text-[17px] leading-[28px] lg:max-w-[472px] w-full">
+                    Promote your blog posts, case udie, and product ouncems
+                    with the the branded videoscustomers coming back for
+                    services Makes best effort.</p>
                 </div>
-              <!-- Section title end -->
-              
-              <!-- from inner start-->
-              <form action="#">
-                <div class="grid grid-cols-2 gap-7">
+                <!-- Section title end -->
+
+                <!-- from inner start-->
+                <form action="#">
+                  <div class="grid grid-cols-2 gap-7">
                     <div>
-                      <input class="w-full bg-white rounded px-5 py-2 h-11 dark:bg-transparent dark:text-slate-300 border border-[#dddddd] dark:border dark:border-slate-600" type="text" name="name" placeholder="Your name" >
+                      <input
+                        class="w-full bg-white rounded px-5 py-2 h-11 dark:bg-transparent dark:text-slate-300 border border-[#dddddd] dark:border dark:border-slate-600"
+                        type="text" name="name" placeholder="Your name">
                     </div>
                     <div>
-                      <input class="w-full bg-white rounded px-5 py-2 h-11 dark:bg-transparent dark:text-slate-300 border border-[#dddddd] dark:border dark:border-slate-600" type="email" name="email" placeholder="Your email" >
+                      <input
+                        class="w-full bg-white rounded px-5 py-2 h-11 dark:bg-transparent dark:text-slate-300 border border-[#dddddd] dark:border dark:border-slate-600"
+                        type="email" name="email" placeholder="Your email">
                     </div>
                     <div class="col-span-2">
-                      <textarea class="w-full bg-white rounded px-5 py-2 h-40 dark:bg-transparent dark:text-slate-300 border border-[#dddddd] dark:border dark:border-slate-600" name="message" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                      <textarea
+                        class="w-full bg-white rounded px-5 py-2 h-40 dark:bg-transparent dark:text-slate-300 border border-[#dddddd] dark:border dark:border-slate-600"
+                        name="message" id="" cols="30" rows="10" placeholder="Message"></textarea>
                     </div>
+                  </div>
+                  <button class="btn solid-btn mt-12">Send Request</button>
+                </form>
+                <!-- from inner end -->
+              </div>
+
+              <div
+                class="ltr:only-md:pl-[30px] ltr:lg:pl-[50px] rtl:only-md:pr-[30px] rtl:lg:pr-[50px] mt-[30px] lg:mt-[150px] md:flex md:gap-[30px] md:flex-wrap">
+                <!-- Single contact info start -->
+                <div class="flex items-center">
+                  <div>
+                    <span
+                      class="w-[50px] h-[50px] lg:w-[70px] lg:h-[70px] bg-accent1 text-white flex items-center rounded-full justify-center">
+                      <svg width="25" height="34" fill="currentColor" stroke="currentColor"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path
+                          d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="ltr:pl-6 rtl:pr-6">
+                    <h3 class="text-[28px] md:text-[22px] font-heebo font-bold text-primary dark:text-white">Call Me
+                    </h3>
+                    <span class="text-primary dark:text-slate-200 text-[22px] md:text-[18px] mt-5">++880254615566 <br>
+                      ++826542556455</span>
+                  </div>
                 </div>
-                <button class="btn solid-btn mt-12">Send Request</button>
-            </form>
-              <!-- from inner end -->
-            </div>
+                <!-- Single contact info end -->
 
-            <div class="ltr:only-md:pl-[30px] ltr:lg:pl-[50px] rtl:only-md:pr-[30px] rtl:lg:pr-[50px] mt-[30px] lg:mt-[150px] md:flex md:gap-[30px] md:flex-wrap">
-                  <!-- Single contact info start -->
-                  <div class="flex items-center">
-                    <div>
-                      <span class="w-[50px] h-[50px] lg:w-[70px] lg:h-[70px] bg-accent1 text-white flex items-center rounded-full justify-center">                        
-                        <svg width="25" height="34" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
-                      </span>
-                    </div>
-                    <div class="ltr:pl-6 rtl:pr-6">
-                       <h3 class="text-[28px] md:text-[22px] font-heebo font-bold text-primary dark:text-white">Call Me</h3>
-                       <span class="text-primary dark:text-slate-200 text-[22px] md:text-[18px] mt-5">++880254615566 <br> ++826542556455</span>
-                    </div>
+                <!-- Single contact info start -->
+                <div class="flex items-center lg:mt-7">
+                  <div>
+                    <span
+                      class="w-[50px] h-[50px] lg:w-[70px] lg:h-[70px] bg-accent1 text-white flex items-center rounded-full justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-mail">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                      </svg>
+                    </span>
                   </div>
-                  <!-- Single contact info end -->
+                  <div class="ltr:pl-6 rtl:pr-6">
+                    <h3 class="text-[28px] md:text-[22px] font-heebo font-bold text-primary dark:text-white">Email Us
+                    </h3>
+                    <span class="text-primary  dark:text-slate-200 text-[22px] md:text-[18px] mt-5">rubel@eobi.com <br>
+                      moraty@bara.com
+                    </span>
+                  </div>
+                </div>
+                <!-- Single contact info end -->
 
-                  <!-- Single contact info start -->
-                  <div class="flex items-center lg:mt-7">
-                    <div>
-                      <span class="w-[50px] h-[50px] lg:w-[70px] lg:h-[70px] bg-accent1 text-white flex items-center rounded-full justify-center">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                      </span>
-                    </div>
-                    <div class="ltr:pl-6 rtl:pr-6">
-                       <h3 class="text-[28px] md:text-[22px] font-heebo font-bold text-primary dark:text-white">Email Us</h3>
-                       <span class="text-primary  dark:text-slate-200 text-[22px] md:text-[18px] mt-5">rubel@eobi.com <br>
-                        moraty@bara.com
-                        </span>
-                    </div>
+                <!-- Single contact info start -->
+                <div class="flex items-center lg:mt-7">
+                  <div>
+                    <span
+                      class="w-[50px] h-[50px] lg:w-[70px] lg:h-[70px] bg-accent1 text-white flex items-center rounded-full justify-center">
+                      <svg width="32" height="34" fill="currentColor" stroke="currentColor"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                        <path
+                          d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64z" />
+                      </svg>
+                    </span>
                   </div>
-                  <!-- Single contact info end -->
-
-                  <!-- Single contact info start -->
-                  <div class="flex items-center lg:mt-7">
-                    <div>
-                      <span class="w-[50px] h-[50px] lg:w-[70px] lg:h-[70px] bg-accent1 text-white flex items-center rounded-full justify-center">
-                        <svg width="32" height="34" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64z"/></svg>
-                      </span>
-                    </div>
-                    <div class="ltr:pl-6 rtl:pr-6">
-                       <h3 class="text-[28px] md:text-[22px] font-heebo font-bold text-primary dark:text-white">Address</h3>
-                       <span class="text-primary  dark:text-slate-200 text-[22px] md:text-[18px] mt-5">20, 25 Dhaka,0123 <br>
-                        Ratrba baraj,20
-                        </span>
-                    </div>
+                  <div class="ltr:pl-6 rtl:pr-6">
+                    <h3 class="text-[28px] md:text-[22px] font-heebo font-bold text-primary dark:text-white">Address
+                    </h3>
+                    <span class="text-primary  dark:text-slate-200 text-[22px] md:text-[18px] mt-5">20, 25 Dhaka,0123
+                      <br>
+                      Ratrba baraj,20
+                    </span>
                   </div>
-                  <!-- Single contact info end -->
+                </div>
+                <!-- Single contact info end -->
 
               </div>
-          </div>
+            </div>
             <!-- Form wrapper end -->
 
 
-          <!-- Google map start  -->
-          <div class="pt-[70px] lg:pt-[100px]">
-            <div class="border-2 border-accent1" style="width: 100%"><iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=440&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">distance maps</a></iframe></div>
+            <!-- Google map start  -->
+            <div class="pt-[70px] lg:pt-[100px]">
+              <div class="border-2 border-accent1" style="width: 100%"><iframe width="100%" height="400" frameborder="0"
+                  scrolling="no" marginheight="0" marginwidth="0"
+                  src="https://maps.google.com/maps?width=100%25&amp;height=440&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
+                    href="https://www.maps.ie/distance-area-calculator.html">distance maps</a></iframe></div>
+            </div>
+            <!-- Google map send -->
+
           </div>
-          <!-- Google map send -->
-          
-        </div>
-      </section>
-      <!-- Contact form section end -->
-    </main>
-    <!-- Main wrapper end -->
+        </section>
+        <!-- Contact form section end -->
+      </main>
+      <!-- Main wrapper end -->
 
 
-    <!-------- Plugins js ------>
+      <!-------- Plugins js ------>
 
-    <!-- Swiper js -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    
-     <!-- imagesloaded js -->
-    <script src="./assets/js/imagesloaded.pkgd.min.js" defer></script>
+      <!-- Swiper js -->
+      <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
-    <!-- Isotope js -->
-    <script src="./assets/js/isotope.pkgd.min.js" defer></script>
+      <!-- imagesloaded js -->
+      <script src="./assets/js/imagesloaded.pkgd.min.js" defer></script>
 
-    <!-- Custom js -->
-    <script src="./assets/js/script.js" defer></script>
-  </body>
+      <!-- Isotope js -->
+      <script src="./assets/js/isotope.pkgd.min.js" defer></script>
+
+      <!-- Custom js -->
+      <script src="./assets/js/script.js" defer></script>
+</body>
+
 </html>
