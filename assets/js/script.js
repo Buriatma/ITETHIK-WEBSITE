@@ -1,28 +1,49 @@
-/*
-  Template Name: Benos - Personal Portfolio Tailwind CSS HTML Template
-  Author Name: Hook theme
-  Author URL: https://themeforest.net/user/hooktheme
-  Version: 1.0.0
-*/
+
 
 "use strict";
 
+//cookie - policy
+
+function acceptCookies() {
+  // set cookie to indicate that cookie notice has been accepted
+  document.cookie = "cookiesAccepted=true; path=/";
+  // remove cookie notice
+  document.getElementById("cookie-notice").remove();
+}
+// show cookie notice only if cookie is not set
+if (document.cookie.indexOf("cookiesAccepted=true") === -1) {
+  document.body.appendChild(document.getElementById("cookie-notice"));
+}
+// remove cookie notice if cookie is set
+else {
+  document.getElementById("cookie-notice").remove();
+}
+
 // Preloader
+
 const preLoader = function () {
   let preloaderWrapper = document.getElementById("preloader");
-  window.onload = () => {
-    let isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
-    if (!isMobile) {
-      setTimeout(function () {
-        preloaderWrapper.classList.add("preloaded");
-      }, 300);
-      setTimeout(function () {
+  if (document.cookie.indexOf("preloaderShown=true") === -1) {
+    // show preloader only if cookie is not set
+    window.onload = () => {
+      let isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+      if (!isMobile) {
+        setTimeout(function () {
+          preloaderWrapper.classList.add("preloaded");
+        }, 300);
+        setTimeout(function () {
+          preloaderWrapper.remove();
+        }, 1000);
+      } else {
         preloaderWrapper.remove();
-      }, 1000);
-    } else {
-      preloaderWrapper.remove();
-    }
-  };
+      }
+    };
+    // set cookie to indicate that preloader has been shown
+    document.cookie = "preloaderShown=true; path=/";
+  } else {
+    // remove preloader if cookie is set
+    preloaderWrapper.remove();
+  }
 };
 preLoader();
 

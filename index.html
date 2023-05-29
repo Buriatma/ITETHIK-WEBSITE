@@ -29,8 +29,8 @@
       document.getElementById("light__to--dark")?.classList.add("dark--version");
     }
     if (localStorage.getItem("theme-color") === "light") {
-      document.documentElement.classList.add("dark");
-      document.getElementById("light__to--dark")?.classList.add("dark--version");
+      document.documentElement.classList.remove("dark");
+      document.getElementById("light__to--dark")?.classList.remove("dark--version");
     } 
   </script>
 </head>
@@ -176,7 +176,6 @@
 
   <!-- Main wrapper start -->
   <main>
-
     <!-- Hero section start -->
     <section
       class="bg-cover bg-no-repeat bg-center sm:h-full only-md:h-screen lg:min-h-screen flex justify-center items-center overflow-hidden bg-[url('../images/hero-bg-img.png')] bg-[#DAEEF1] dark:bg-[url('../images/hero-bg-img-dark.png')] dark:bg-dark_primary_bg dark:border-b dark:border-dark_accent1"
@@ -466,34 +465,6 @@
       </div>
     </section>
     <!-- Services section end -->
-
-    <!-- Team section start -->
-          <section
-      class="bg-[#EFF3F7] dark:bg-dark_primary_bg pt-[70px] lg:pt-[100px] pb-[40px] lg:pb-[70px] dark:border-t dark:border-b dark:border-dark_accent1"
-      id="portfolio">
-      <div class="container mx-auto">
-        <div class="flex justify-between items-center gap-[20px] lg:gap-[30px] mb-[55px] md:flex-wrap md:text-center">
-          <div class="max-w-full lg:max-w-[580px]  w-full">
-            <span class="text-accent1 text-[20px] lg:text-[24px] font-medium mb-[10px] lg:mb-[5px]">Our Team</span>
-            <h2
-              class="text:[28px] lg:text-[48px] font-bold font-heebo leading-[36x] lg:leading-[58px] text-[#000248] dark:text-white">
-              Our exceptional team of experts ensures client happiness and success.
-            </h2>
-          </div>
-          <div class="md:grow">
-            <p class="text-[#636363] dark:text-slate-200 text-[17px] leading-[28px] lg:max-w-[472px] w-full">Promote
-              your blog posts, case udie, and product ouncems
-              with the the branded videoscustomers coming back for
-              services Makes best effort.</p>
-            </div>
-        </div>
-        <div>
-        <iframe src="team-member-home.html" width="100%" height="555px"  style="border:0; padding-top: 0%; gap: 0;"  sandbox="allow-same-origin allow-scripts allow-forms" scrolling="no" style="overflow: hidden" allowfullscreen="" loading="lazy"></iframe>
-      </div>
-        </section>
-
- 
-      
 
     <!-- About me section start -->
     <section
@@ -1906,6 +1877,123 @@
     </section>
     <!-- Portfolio section end -->
 
+<!-- Team section start -->
+
+    <section class="lg:py-[100px] md:py-[70px] dark:border-b dark:border-dark_accent1">
+      <div class="container mx-auto">
+        <!-- Section title start -->
+        <div class="mb-[35px] lg:mb-[55px]">
+          <div class="max-w-full max-w-full w-full text-center">
+            <span class="text-accent1 text-[20px] lg:text-[24px] font-medium mb-[10px] lg:mb-[5px]">Our Professionals</span>
+            <h2
+              class="text:[28px] lg:text-[48px] font-bold font-heebo leading-[36x] lg:leading-[58px] text-[#000248] dark:text-white">
+              Meet Our Expert Team
+            </h2>
+          </div>
+        </div>
+        <!-- Team title end -->
+
+    <section class="py-20">
+      <div class="team">
+        <div class="team-members">
+          <div class="team-card rounded-lg overflow-hidden shadow-lg">
+            <img src="https://ik.imagekit.io/hk376cwka/images/hero.png?updatedAt=1685287496599" alt="Team Member 1"
+              class="w-full h-auto profile-image">
+            <div class="team-card-content">
+              <h3>Keshav Sharma</h3>
+              <p>Web Developer</p>
+              <div class="social-icons">
+                <a href="#" onclick="alert('Facebook clicked')"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" onclick="alert('Instagram clicked')"><i class="fab fa-instagram"></i></a>
+                <a href="#" onclick="alert('LinkedIn clicked')"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+            <div class="card-popup">
+              <div class="card-popup-content">
+                <img src="https://ik.imagekit.io/hk376cwka/images/hero.png?updatedAt=1685287496599"
+                  alt="Team Member 1">
+                <h3>Keshav Sharma</h3>
+                <p>Web Developer</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua.</p>
+                <div class="card-popup-social-icons">
+                  <a href="#" onclick="alert('Facebook clicked')"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" onclick="alert('Instagram clicked')"><i class="fab fa-instagram"></i></a>
+                  <a href="#" onclick="alert('LinkedIn clicked')"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+              <button class="close-button" onclick="togglePopup(this)">&times;</button>
+            </div>
+          </div>
+          <!--  team members 2 -->
+
+          <div class="team-card rounded-lg overflow-hidden shadow-lg">
+            <img src="https://ik.imagekit.io/hk376cwka/images/hero.png?updatedAt=1685287496599" alt="Team Member 1"
+              class="w-full h-auto profile-image">
+            <div class="team-card-content">
+              <h3>Keshav Sharma</h3>
+              <p>Web Developer</p>
+              <div class="social-icons">
+                <a href="#" onclick="alert('Facebook clicked')"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" onclick="alert('Instagram clicked')"><i class="fab fa-instagram"></i></a>
+                <a href="#" onclick="alert('LinkedIn clicked')"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+            <div class="card-popup">
+              <div class="card-popup-content">
+                <img src="https://ik.imagekit.io/hk376cwka/images/hero.png?updatedAt=1685287496599"
+                  alt="Team Member 1">
+                <h3>Keshav Sharma</h3>
+                <p>Web Developer</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua. </p>
+                <div class="card-popup-social-icons">
+                  <a href="#" onclick="alert('Facebook clicked')"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" onclick="alert('Instagram clicked')"><i class="fab fa-instagram"></i></a>
+                  <a href="#" onclick="alert('LinkedIn clicked')"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+              <button class="close-button" onclick="togglePopup(this)">&times;</button>
+            </div>
+          </div>
+          <!--  team members 3 -->
+
+          <div class="team-card rounded-lg overflow-hidden shadow-lg">
+            <img src="https://ik.imagekit.io/hk376cwka/images/hero.png?updatedAt=1685287496599" alt="Team Member 1"
+              class="w-full h-auto profile-image">
+            <div class="team-card-content">
+              <h3>Keshav Sharma</h3>
+              <p>Web Developer</p>
+              <div class="social-icons">
+                <a href="#" onclick="alert('Facebook clicked')"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" onclick="alert('Instagram clicked')"><i class="fab fa-instagram"></i></a>
+                <a href="#" onclick="alert('LinkedIn clicked')"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+            <div class="card-popup">
+              <div class="card-popup-content">
+                <img src="https://ik.imagekit.io/hk376cwka/images/hero.png?updatedAt=1685287496599"
+                  alt="Team Member 1">
+                <h3>Keshav Sharma</h3>
+                <p>Web Developer</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua. </p>
+                <div class="card-popup-social-icons">
+                  <a href="#" onclick="alert('Facebook clicked')"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" onclick="alert('Instagram clicked')"><i class="fab fa-instagram"></i></a>
+                  <a href="#" onclick="alert('LinkedIn clicked')"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+              <button class="close-button" onclick="togglePopup(this)">&times;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      
+    </section>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 
 
 
@@ -2620,6 +2708,12 @@
 
 
   <!-- Footer start -->
+  <!--cookie notice-->
+  <div id="cookie-notice" style="position: fixed; bottom: 0; left: 0; right: 0; background-color: rgba(33,36,40,255); color: #fff; padding: 20px; text-align: center; font-size: 14px; z-index: 9999;">
+    This website uses cookies to ensure you get the best experience on our website. <a href="#" style="color: #fff;">Learn more</a>
+    <button onclick="acceptCookies()" style="background-color: #fff; color: rgba(33,36,40,255); border: none; padding: 8px 16px; margin-left: 10px; cursor: pointer;">Accept</button>
+  </div>
+  
 
   <!-- whatapp  -->
   <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
@@ -2684,6 +2778,8 @@
 
   <!-- Custom js -->
   <script src="./assets/js/script.js" defer></script>
+  
+  
 </body>
 
 </html>

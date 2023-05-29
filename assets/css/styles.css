@@ -2040,6 +2040,7 @@ button {
   display: flex;
   height: 100vh;
   width: 100%;
+  margin: auto;
 }
 
 #preloader::before {
@@ -2229,6 +2230,169 @@ button {
 section {
   scroll-margin-top: 100px;
 }
+
+
+/* Team Home */
+
+.team {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.team-members {
+  display: grid;
+  grid-template-columns: repeat(1, 3fr);
+  gap: 20px;
+}
+
+.team-card {
+  background-color: #383a3e;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  height: auto;
+  max-width: 300px; /* Decrease the width as needed */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+}
+
+.profile-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.team-card:hover .profile-image {
+  transform: scale(1);
+}
+
+.team-card-content {
+  padding: 20px;
+  color: #fff;
+}
+
+.team-card-content h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.team-card-content p {
+  color: #8d8d8d;
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 5px;
+  color: #fff;
+  font-size: 18px;
+  transition: color 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+  color: #00bcd4;
+}
+
+.card-popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  background-color: rgba(56, 58, 62, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.team-card:hover .card-popup {
+  opacity: 1;
+  visibility: visible;
+}
+
+.card-popup-content {
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f2f2f2;
+  text-align: center;
+}
+
+.card-popup-content img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+}
+
+.card-popup-social-icons {
+  margin-top: 20px;
+}
+
+.card-popup-social-icons a {
+  display: inline-block;
+  margin: 0 5px;
+  color: #212428;
+  font-size: 18px;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.card-popup-social-icons a:hover {
+  color: #00bcd4;
+  transform: scale(1.2);
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.team-card:hover .close-button {
+  display: flex;
+}
+
+/* Responsive Adjustments */
+@media screen and (min-width: 768px) {
+  .team-members {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .team-members {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 
 /* Button UI */
 
