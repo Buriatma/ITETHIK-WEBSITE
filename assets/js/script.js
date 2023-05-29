@@ -7,32 +7,6 @@
 
 "use strict";
 
-// Dark to light mode js
-const lightToDarkButton = document.getElementById("light__to--dark");
-lightToDarkButton?.addEventListener("click", function () {
-  if (localStorage.getItem("theme-color")) {
-    if (localStorage.getItem("theme-color") === "light") {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme-color", "dark");
-      lightToDarkButton?.classList.add("dark--version");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme-color", "light");
-      lightToDarkButton?.classList?.remove("dark--version");
-    }
-  } else {
-    if (document.documentElement.classList.contains("dark")) {
-      document.documentElement.classList.remove("dark");
-      lightToDarkButton?.classList?.remove("dark--version");
-      localStorage.setItem("theme-color", "light");
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme-color", "dark");
-      lightToDarkButton?.classList.add("dark--version");
-    }
-  }
-});
-
 // Preloader
 const preLoader = function () {
   let preloaderWrapper = document.getElementById("preloader");
