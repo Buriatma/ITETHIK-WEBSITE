@@ -27,10 +27,6 @@
     if (localStorage.getItem("theme-color") === "dark" || (!("theme-color" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
       document.documentElement.classList.add("dark");
       document.getElementById("light__to--dark")?.classList.add("dark--version");
-    }
-    if (localStorage.getItem("theme-color") === "light") {
-      document.documentElement.classList.remove("dark");
-      document.getElementById("light__to--dark")?.classList.remove("dark--version");
     } 
   </script>
 </head>
