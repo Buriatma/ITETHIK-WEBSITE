@@ -28,20 +28,13 @@
       document.documentElement.classList.add("dark");
       document.getElementById("light__to--dark")?.classList.add("dark--version");
     }
-    if (localStorage.getItem("theme-color") === "light") {
-      document.documentElement.classList.remove("dark");
-      document.getElementById("light__to--dark")?.classList.remove("dark--version");
-    } 
+
   </script>
 </head>
 
 <body class="font-rubik dark:bg-dark_primary_bg">
 
-  <!-- Preloader start -->
-  <div id="preloader">
-    <div class="loader--border"></div>
-  </div>
-  <!-- Preloader end -->
+
 
   <!-- Header area start -->
   <header class="absolute w-full left-0 top-0">
