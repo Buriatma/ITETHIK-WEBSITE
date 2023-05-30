@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: #212428;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      text-align: center;
+      color: #ffffff;
+    }
+    
+    h1 {
+      font-size: 48px;
+      margin-top: 200px;
+      animation: slideIn 1s forwards;
+    }
+    
+    p {
+      font-size: 18px;
+      animation: fadeIn 1s forwards;
+    }
+    
+    #error-image {
+      margin-top: 50px;
+      animation: shake 0.8s infinite;
+    }
+    
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      20% { transform: translateX(-10px) rotate(-10deg); }
+      40% { transform: translateX(10px) rotate(10deg); }
+      60% { transform: translateX(-10px) rotate(-10deg); }
+      80% { transform: translateX(10px) rotate(10deg); }
+      100% { transform: translateX(0); }
+    }
+    
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: blue;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    
+    .button:hover {
+      background-color: yellow;
+      animation: bounce 0.8s infinite;
+    }
+    
+    .search-bar {
+      display: inline-block;
+      margin-top: 30px;
+    }
+    
+    .search-bar input[type="text"] {
+      padding: 10px;
+      border: none;
+      border-radius: 20px;
+    }
+    
+    .parallax-container {
+      perspective: 1000px;
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: 300px;
+    }
+    
+    .parallax-image {
+      width: 100%;
+      height: auto;
+      transform: translateZ(-100px) scale(1.5);
+      transition: transform 0.2s;
+    }
+    
+    .parallax-container:hover .parallax-image {
+      transform: translateZ(-100px) scale(1.2);
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 36px;
+        margin-top: 150px;
+      }
+      
+      p {
+        font-size: 16px;
+      }
+      
+      .button {
+        padding: 8px 16px;
+      }
+      
+      .search-bar {
+        margin-top: 20px;
+      }
+      
+      .search-bar input[type="text"] {
+        padding: 8px;
+      }
+      
+      .parallax-container {
+        height: 250px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 24px;
+        margin-top: 100px;
+      }
+      
+      p {
+        font-size: 14px;
+      }
+      
+      .button {
+        padding: 6px 12px;
+        font-size: 12px;
+      }
+      
+      .search-bar {
+        margin-top: 10px;
+      }
+      
+      .search-bar input[type="text"] {
+        padding: 6px;
+      }
+      
+      .parallax-container {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Oops! It seems like you've stumbled upon a digital wilderness.</h1>
+  <p>The page you're looking for, much like a hidden treasure, is nowhere to be found. But fear not, for every journey has its detours.</p>
+  <p>While our digital explorers are tirelessly searching for the missing link, why not take a moment to enjoy the beauty of this unexpected pitstop? Take a deep breath, embrace the serendipity, and let your imagination wander amidst the vast expanse of ones and zeros.</p>
+  <p>Remember, even the greatest discoveries were made by those who dared to venture off the beaten path. So, feel free to explore our website further, and who knows what hidden gems you might uncover?</p>
+  <p>In the meantime, we apologize for any inconvenience caused. Rest assured, our team is on the case, determined to bring the missing page back to life. Until then, let's revel in the mystery and celebrate the unexpected.</p>
+  <p>Thank you for your patience and understanding. Happy exploring!</p>
+
+  <div class="parallax-container">
+    <div class="parallax-image">
+      <img id="error-image" src="https://img.freepik.com/premium-vector/404-error-page-found-natural-fantasy-illustration-concept-web-missing-page_111925-144.jpg?w=1380" alt="Error Image">
+    </div>
+  </div>
+  
+  <div class="button-container">
+    <a href="/" class="button">Back to Home</a>
+  </div>
+  
+  <div class="search-bar">
+    <input type="text" placeholder="Search...">
+  </div>
+  
+  <script>
+    // JavaScript code to stop the animation after 5 seconds
+    setTimeout(function() {
+      var errorImage = document.getElementById('error-image');
+      errorImage.style.animation = 'none';
+    }, 5000);
+  </script>
+</body>
+</html>
