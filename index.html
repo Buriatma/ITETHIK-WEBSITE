@@ -41,8 +41,8 @@
   
     // Check if the stored theme color is set to light, then remove the dark theme
     if (localStorage.getItem("theme-color") === "light") {
-      document.documentElement.classList.remove("dark");
-      document.getElementById("light__to--dark")?.classList.remove("dark--version");
+      document.documentElement.classList.add("dark");
+      document.getElementById("light__to--dark")?.classList.add("dark--version");
     }
   </script>
   
