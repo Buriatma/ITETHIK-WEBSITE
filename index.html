@@ -25,10 +25,14 @@
   <script>
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
     if (localStorage.getItem("theme-color") === "dark" || (!("theme-color" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-      document.documentElement.classList.add("dark");
-      document.getElementById("light__to--dark")?.classList.add("dark--version");
-    } 
-  </script>
+        document.documentElement.classList.add("dark");
+        document.getElementById("light__to--dark")?.classList.add("dark--version");
+      } 
+      if (localStorage.getItem("theme-color") === "light") {
+        document.documentElement.classList.remove("dark");
+        document.getElementById("light__to--dark")?.classList.remove("dark--version");
+      } 
+    </script>
 </head>
 
 <body class="font-rubik dark:bg-dark_primary_bg">
@@ -47,6 +51,9 @@
           <div class="logo">
             <a href="./index.html">
               <img class="hidden dark:block"
+                src="assets/images/blue-logo-border.png" loading="lazy"
+                width="120" height="30" alt="ItEthik" loading="lazy">
+                <img class="hidden dark:block"
                 src="assets/images/blue-logo-border.png" loading="lazy"
                 width="120" height="30" alt="ItEthik" loading="lazy">
             </a>
@@ -116,7 +123,11 @@
       <div class="offcanvas__header lg:hidden dark:bg-gray-800">
         <div class="offcanvas__inner">
           <div class="offcanvas__logo">
-            <a class="offcanvas__logo_link" href="index.html">\
+            <a class="offcanvas__logo_link" href="index.html">
+              <img class="dark:hidden"
+                src="assets/images/blue-logo-border.png" loading="lazy"
+                alt="ItEthik" width="158" height="36">
+            </a>
               <img class="hidden dark:block"
                 src="assets/images/blue-logo-border.png" loading="lazy"
                 alt="ItEthik" width="158" height="36">
