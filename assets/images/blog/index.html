@@ -1,288 +1,200 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth" dir="ltr">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ItEthik - An It Ethnicity</title>
-
-  <link rel="shortcut icon" type="image/x-icon" href="https://ik.imagekit.io/hk376cwka/images/monogram__1_.png?updatedAt=1685287408855>
-
-  <link rel=" preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap"
-    rel="stylesheet">
-
-  <!-- Plugins css -->
-  <link rel="stylesheet" href="./assets/css/mobilemenu.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-  <!-- Tailwind css -->
-  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Morex - Personal Portfolio HTML Template</title>
+ 
+<link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon.ico">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet">
+    
+     <!-- Plugins css -->
+    <link rel="stylesheet" href="./assets/css/mobilemenu.css" />
+    <!-- <link rel="stylesheet" href="./assets/css/glightbox.min.css" /> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <!-- Tailwind css -->
+    <link rel="stylesheet" href="./assets/css/styles.css" />
 
 
-  <script>
-    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-    if (localStorage.getItem("theme-color") === "dark" || (!("theme-color" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (localStorage.getItem("theme-color") === "dark" || (!("theme-color" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
         document.documentElement.classList.add("dark");
         document.getElementById("light__to--dark")?.classList.add("dark--version");
       } 
       if (localStorage.getItem("theme-color") === "light") {
-        document.documentElement.classList.add("dark");
-        document.getElementById("light__to--dark")?.classList.add("dark--version");
+        document.documentElement.classList.remove("dark");
+        document.getElementById("light__to--dark")?.classList.remove("dark--version");
       } 
-  </script>
-</head>
+    </script>
+  </head>
+  <body class="font-rubik dark:bg-dark_primary_bg">
 
-<body class="font-rubik dark:bg-dark_primary_bg">
+    <!-- Preloader start -->
+      <!-- <div id="preloader">
+          <div class="loader--border"></div>
+      </div> -->
+    <!-- Preloader end -->
 
-  <!-- Preloader start -->
-  <div id="preloader">
-    <div class="loader--border"></div>
-  </div>
-  <!-- Preloader end -->
-
-  <!-- Header area start -->
-  <header class="absolute w-full left-0 top-0">
-    <div class="header__sticky py-5">
-      <div class="container mx-auto">
-        <div class="flex justify-between items-center">
-          <div class="logo">
-            <a href="./index.html">
-              <img class="hidden dark:block"
-                src="assets/images/blue-logo-border.png" loading="lazy"
-                width="120" height="30" alt="ItEthik" loading="lazy">
-            </a>
-          </div>
-          <div class="flex items-center md:hidden">
-            <nav>
-              <ul class="flex items-center">
-                <li>
-                  <a href="#home"
-                    class="text-[17px] xl:text-[19px] text-accent1 dark:text-orange font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Home</a>
-                </li>
-                <li>
-                  <a href="#about"
-                    class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">About</a>
-                </li>
-                </li>
-                <li>
-                  <a href="#services"
-                    class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Services</a>
-                </li>
-                <li>
-                  <a href="#portfolio"
-                    class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Projects</a>
-                </li>
-                <li>
-                  <a href="#blog"
-                    class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Blog</a>
-                </li>
-                <li><a href="#contact"
-                    class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Contact</a>
-                </li>
-              </ul>
-            </nav>
-            <button
-              class="flex bg-accent1 lg:px-[15px] px-[12px] xl:py-[12px] py-[10px] rounded-[2rem] text-[16px] xl:text-[18px] font-medium text-white items-center ltr:ml-[32px] rtl:mr-[32px] transition duration-300 relative after:absolute :after:content-[''] after:bg-primary after:h-full after:w-full after:bottom-0 after:left-0 after:rounded-[2rem] after:trasition after:duration-300 after:opacity-0 hover:after:opacity-[1]">
-              <span
-                class="icon bg-[#EFEBEB] text-accent1 w-[34px] h-[34px] rounded-full flex items-center justify-center ltr:xl:mr-[15px] ltr:mr-[10px] rtl:xl:ml-[15px] rtl:ml-[10px] relative z-[8] flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="feather feather-activity">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
-              </span>
-
-              <span
-                class="ltr:xl:pr-[5px] ltr:lg:pr-[5px] rtl:xl:pl-[5px] rtl:lg:pl-[5px] relative z-[8] flex-shrink-0"><a
-                  href="login.html">Sign-in</a></span>
-            </button>
-          </div>
-          <div class="lg:hidden">
-            <button class="offcanvas__header--menu__open--btn text-primary dark:text-white " data-offcanvas>
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="feather feather-menu">
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-      <!-- Start Offcanvas header menu -->
-      <div class="offcanvas__header lg:hidden dark:bg-gray-800">
-        <div class="offcanvas__inner">
-          <div class="offcanvas__logo">
-            <a class="offcanvas__logo_link" href="index.html">\
-              <img class="hidden dark:block"
-                src="assets/images/blue-logo-border.png" loading="lazy"
-                alt="ItEthik" width="158" height="36">
-            </a>
-            <button class="offcanvas__close--btn dark:text-white" data-offcanvas>close</button>
-          </div>
-          <nav class="offcanvas__menu">
-            <ul class="offcanvas__menu_ul">
-              <li class="offcanvas__menu_li">
-                <a class="offcanvas__menu_item dark:text-orange" href="#home">Home</a>
-              </li>
-              <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white" href="about.html">About</a>
-              </li>
-              <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white"
-                  href="services.html">Services</a></li>
-              <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white"
-                  href="portfolio.html">Portfolio</a></li>
-              <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white" href="blog.html">Blog</a>
-              </li>
-              <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white"
-                  href="contact.html">Contact</a></li>
-            </ul>
-            <button
-              class="flex mx-auto bg-accent1 lg:px-[15px] px-[12px] xl:py-[12px] py-[10px] rounded-[2rem] text-[16px] xl:text-[18px] font-medium text-white items-center transition duration-300 relative after:absolute :after:content-[''] after:bg-primary after:h-full after:w-full after:bottom-0 after:left-0 after:rounded-[2rem] after:trasition after:duration-300 after:opacity-0 hover:after:opacity-[1] mt-[30px]">
-              <span
-                class="icon bg-[#EFEBEB] text-accent1 w-[34px] h-[34px] rounded-full flex items-center justify-center ltr:xl:mr-[15px] ltr:mr-[10px] rtl:xl:ml-[15px] rtl:ml-[10px] relative z-[8] flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="feather feather-activity">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
-              </span>
-              <span
-                class="ltr:xl:pr-[5px] ltr:lg:pr-[5px] rtl:xl:pl-[5px] rtl:lg:pl-[5px] relative z-[8] flex-shrink-0"><a
-                  href="login.html">Sign-in</a></span>
-            </button>
-          </nav>
-        </div>
-      </div>
-
-      <!-- End Offcanvas header menu -->
-    </div>
-
-
-  </header>
-  <!-- Header area end -->
-
-  <!-- Main wrapper start -->
-  <main>
-    <!-- Hero section start -->
-    <section
-      class="bg-cover bg-no-repeat bg-center sm:h-full only-md:h-screen lg:min-h-screen flex justify-center items-center overflow-hidden bg-[url('../images/hero-bg-img.png')] bg-[#DAEEF1] dark:bg-[url('../images/hero-bg-img-dark.png')] dark:bg-dark_primary_bg dark:border-b dark:border-dark_accent1"
-      id="home">
-      <div
-        class="container mx-auto flex sm:flex-col items-center justify-center lg:mt-[40px] only-md:mt-[40px] sm:pt-[100px] sm:pb-[70px]">
-        <div class="lg:max-w-[40%] sm:max-w-[60%] xs:max-w-[85%] only-md:max-w-[40%] flex justify-end">
-          <div class="relative only-xl:max-w-[70%]">
-            <img class="hidden dark:block" src="https://cdn.vibox.co.uk/uploads/178/conversions/obs_amd_lgpu-large.png"
-              alt="" loading="lazy">
-
-            <a href="https://goo.gl/maps/jjK3LvA1LwoZFWHX6?coh=178572&entry=tt" target="_blank"
-              class="absolute top-[100px] lg:top-[210px] right-[-20px] only-md:right-[-10px] only-xl:max-w-[65px] lg:max-w-[80px] xl:max-w-[105px] sm:max-w-[50px] only-md:max-w-[70px] animateUpDown">
-              <img src="https://www.transparentpng.com/thumb/google-logo/google-logo-png-icon-free-download-SUF63j.png"
-                alt="google logo" width="70" height="70" loading="lazy">
-            </a>
-
-
-            <a href="https://www.justdial.com/Mumbai/Itethik-Near-Radcliffe-School-Ulwe/022PXX22-XX22-190416133035-B6N6_BZDET"
-              target="_blank"
-              class="absolute top-[80px] left-[210px] md:left-[-10px] only-xl:max-w-[65px] lg:max-w-[80px] xl:max-w-[105px] sm:max-w-[50px] only-md:max-w-[70px] animateUpDown">
-              <img src="https://ik.imagekit.io/hk376cwka/images/justdial.png?updatedAt=1685287408807" width="50"
-                height="50" alt="justdial logo" loading="lazy">
-            </a>
-
-
-
-            <div
-              class="flex items-center absolute bottom-0 right-0 bg-white dark:bg-dark_accent1 rounded-[50px] px-[15px] py-[15px] shadow-[0_0_50px_0_rgba(196,206,213,0.2)] dark:shadow-[0_0_50px_0_rgba(0,0,0,0.2)]">
-              <div class="text-accent1 w-[45px]">
-                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="feather feather-check-circle">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                </svg>
-              </div>
-              <div class="pl-[10px] pr-[15px]">
-                <span
-                  class="block text-[20px] lg:text-[26px] font-bold text-primary dark:text-white font-heebo leading-[1]">800+</span>
-                <span class="block text-paragraph dark:text-slate-200 text-[17px]">Projects Completed</span>
-              </div>
+      <!-- Header area start -->
+      <header class="absolute w-full left-0 top-0">
+        <div class="header__sticky py-5">
+          <div class="container mx-auto">
+            <div class="flex justify-between items-center">
+                <div class="logo">
+                    <a href="./index.html">
+                      <img class="hidden dark:block" src="./assets/images/logo/Itethik-white-3.png" alt="">
+                      <img class="dark:hidden" src="./assets/images/logo.png" alt="">
+                    </a>
+                </div>
+                <div class="flex items-center md:hidden">
+                  <nav >
+                      <ul class="flex items-center">
+                          <li>
+                            <a href="#home" class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Home</a>
+                          </li>
+                          <li>
+                            <a href="#about" class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">About</a>
+                          </li>
+                          </li>
+                          <li>
+                            <a href="#services" class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Services</a>
+                          </li>
+                          <li>
+                            <a href="#portfolio" class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Portfolio</a>
+                          </li>
+                          <li>
+                            <a href="#blog" class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Blog</a>
+                          </li>
+                      </ul> 
+                  </nav>
+                    <a href="#contact">
+                      <button href="#contact" class="flex bg-accent1 lg:px-[15px] px-[12px] xl:py-[12px] py-[10px] rounded-[2rem] text-[16px] xl:text-[18px] font-medium text-white items-center ltr:ml-[32px] rtl:mr-[32px] transition duration-300 relative after:absolute :after:content-[''] after:bg-primary after:h-full after:w-full after:bottom-0 after:left-0 after:rounded-[2rem] after:trasition after:duration-300 after:opacity-0 hover:after:opacity-[1]">
+                        <span class="ltr:xl:pr-[5px] ltr:lg:pr-[5px] rtl:xl:pl-[5px] rtl:lg:pl-[5px] relative z-[8] flex-shrink-0">Contact Us</span>
+                      </button>
+                  </a>
+                </div>
+                <div class="lg:hidden">
+                  <button class="offcanvas__header--menu__open--btn text-primary dark:text-white " data-offcanvas>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                  </button>
+                </div>
             </div>
-          </div>
         </div>
-        <div
-          class="ltr:xl:pl-[95px] ltr:lg:pl-[50px] ltr:only-md:pl-[40px] rtl:xl:pr-[95px] rtl:lg:pr-[50px] rtl:only-md:pr-[40px] flex-grow sm:mt-[30px] sm:text-center">
-          <!-- <span class="text-accent1 text-[24px] font-semibold italic pb-[5px]">With ItEthik</span> -->
-          <h2
-            class="lg:text-[60px] only-md:text-[40px] sm:text-[28px] font-bold font-heebo text-heading dark:text-white">
-            Simplify Your IT Needs with ITETHIK. </h2>
-          <h3 class="font-heebo font-normal text-primary dark:text-white"> </h3>
-          <p class="lg:text-[20px] md:text-[16px] text-paragraph dark:text-slate-200 lg:mt-[18px] md:mt-[15px]">Your
-            expert partner for computer, laptop/mac repairs, CCTV, intercoms, biometrics, and servers.</p>
-          <div class="flex items-center gap-[18px] flex-wrap mt-[30px] sm:justify-center">
-            <a href="#" class="btn outline-btn text-accent1 shrink-0">Book Now</a>
-            <div class="flex items-center flex-wrap gap-[15px] sm:justify-center">
-              <span
-                class="font-heebo lg:text-[22px] md:text-[18px] font-semibold shrink-0 text-primary dark:text-white">Follow
-                us: </span>
-              <div class="flex items-center">
-                <a href="https://www.facebook.com/profile.php?id=100076832234885"  target="_blank"
-                  class="w-[30px] h-[30px] flex items-center justify-center text-accent1 border border-accent1 transition duration-300 hover:bg-accent1 hover:text-white rounded-full">
-                  <svg fill="currentColor" stroke="currentColor" width="13" height="14"
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-                    <path
-                      d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" />
-                  </svg>
-                </a>
-                <a href="https://www.youtube.com/channel/UCh3-ExRE1XhEf-A6FJQQJLw"  target="_blank"
-                  class="w-[30px] h-[30px] flex items-center justify-center text-accent1 border border-accent1 transition duration-300 hover:bg-accent1 hover:text-white rounded-full ltr:ml-[10px] rtl:mr-[10px]">
-                  <svg fill="currentColor" stroke="currentColor" width="13" height="14"
-                  xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="youtube"><path d="M23,9.71a8.5,8.5,0,0,0-.91-4.13,2.92,2.92,0,0,0-1.72-1A78.36,78.36,0,0,0,12,4.27a78.45,78.45,0,0,0-8.34.3,2.87,2.87,0,0,0-1.46.74c-.9.83-1,2.25-1.1,3.45a48.29,48.29,0,0,0,0,6.48,9.55,9.55,0,0,0,.3,2,3.14,3.14,0,0,0,.71,1.36,2.86,2.86,0,0,0,1.49.78,45.18,45.18,0,0,0,6.5.33c3.5.05,6.57,0,10.2-.28a2.88,2.88,0,0,0,1.53-.78,2.49,2.49,0,0,0,.61-1,10.58,10.58,0,0,0,.52-3.4C23,13.69,23,10.31,23,9.71ZM9.74,14.85V8.66l5.92,3.11C14,12.69,11.81,13.73,9.74,14.85Z"></path></svg>
-                  
-                </a>
-                <a href="https://twitter.com/ITEthik"  target="_blank"
-                  class="w-[30px] h-[30px] flex items-center justify-center text-accent1 border border-accent1 transition duration-300 hover:bg-accent1 hover:text-white rounded-full ltr:ml-[10px] rtl:mr-[10px]">
-                  <svg fill="currentColor" stroke="currentColor" width="13" height="14"
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <path
-                      d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
-                  </svg>
-                </a>
-                <a href="https://www.instagram.com/_itethik_/"  target="_blank"
-                  class="w-[30px] h-[30px] flex items-center justify-center text-accent1 border border-accent1 transition duration-300 hover:bg-accent1 hover:text-white rounded-full ltr:ml-[10px] rtl:mr-[10px]">
-                  <svg fill="currentColor" stroke="currentColor" width="13" height="14"
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                    <path
-                      d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
-                  </svg>
-                  
-                  <a href="https://www.reddit.com/user/ITETHIK/"  target="_blank"
-                  class="w-[30px] h-[30px] flex items-center justify-center text-accent1 border border-accent1 transition duration-300 hover:bg-accent1 hover:text-white rounded-full ltr:ml-[10px] rtl:mr-[10px]">
-                  <svg fill="currentColor" stroke="currentColor" width="13" height="14"
-                  xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="reddit"><path d="M14.41016,16.86719A3.375,3.375,0,0,1,12.042,17.5a3.36829,3.36829,0,0,1-2.36523-.63184,1.00059,1.00059,0,0,0-1.416,1.41407A5.11054,5.11054,0,0,0,12.042,19.5a5.12,5.12,0,0,0,3.78223-1.2168,1.00058,1.00058,0,1,0-1.41406-1.416ZM9.2005,15.00165a1,1,0,1,0-1.0003-.9997A1.00079,1.00079,0,0,0,9.2005,15.00165Zm6-2a1,1,0,1,0,.9997,1.0003A1.00138,1.00138,0,0,0,15.2005,13.00165ZM23,11.78027a3.77157,3.77157,0,0,0-6.794-2.26471,16.50461,16.50461,0,0,0-3.05005-.47851l.85578-5.705,2.08752.70984a2.99694,2.99694,0,0,0,5.99353-.06433V3.95508a3.02886,3.02886,0,0,0-3-2.95508,2.97689,2.97689,0,0,0-2.33209,1.155L13.52246,1.05371a.999.999,0,0,0-1.31152.79785L11.13446,9.027A16.66426,16.66426,0,0,0,7.794,9.51556a3.76753,3.76753,0,0,0-6.22492,4.23487A4.86206,4.86206,0,0,0,1,16c0,3.9248,4.832,7,11,7s11-3.0752,11-7a4.86217,4.86217,0,0,0-.56866-2.2489A3.78344,3.78344,0,0,0,23,11.78027ZM19.09277,3a1,1,0,1,1-1,1A1.01672,1.01672,0,0,1,19.09277,3ZM4.78027,10a1.75976,1.75976,0,0,1,.88172.24951A9.97889,9.97889,0,0,0,3.0141,11.9234c-.004-.04785-.0141-.095-.0141-.14313A1.78255,1.78255,0,0,1,4.78027,10ZM12,21c-4.87891,0-9-2.29-9-5s4.12109-5,9-5,9,2.29,9,5S16.87891,21,12,21Zm8.9859-9.07654A9.97805,9.97805,0,0,0,18.338,10.24951,1.75993,1.75993,0,0,1,19.21973,10,1.78255,1.78255,0,0,1,21,11.78027C21,11.82837,20.98993,11.87561,20.9859,11.92346Z"></path></svg>
-                  
-                 
-                </a>
+         <!-- Start Offcanvas header menu -->
+        <div class="offcanvas__header lg:hidden dark:bg-gray-800">
+          <div class="offcanvas__inner">
+              <div class="offcanvas__logo">
+                  <a class="offcanvas__logo_link" href="index.html">
+                      <img class="dark:hidden" src="./assets/images/logo.png" alt="Grocee Logo" width="158" height="36">
+                      <img class="hidden dark:block" src="./assets/images/logo-light.png" alt="Grocee Logo" width="158" height="36">
+                  </a>
+                  <button class="offcanvas__close--btn dark:text-white" data-offcanvas>close</button>
               </div>
-            </div>
+              <nav class="offcanvas__menu">
+                  <ul class="offcanvas__menu_ul">
+                      <li class="offcanvas__menu_li">
+                          <a class="offcanvas__menu_item dark:text-white" href="#home">Home</a>
+                          <!-- <ul class="offcanvas__sub_menu">
+                              <li class="offcanvas__sub_menu_li"><a href="index.html" class="offcanvas__sub_menu_item dark:text-white">Home One</a></li>
+                              <li class="offcanvas__sub_menu_li"><a href="index-2.html" class="offcanvas__sub_menu_item dark:text-white">Home Two</a></li>
+                              <li class="offcanvas__sub_menu_li"><a href="index-3.html" class="offcanvas__sub_menu_item dark:text-white">Home Three</a></li>
+                          </ul> -->
+                      </li>
+                      <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white" href="#about">About</a></li>
+                      <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white" href="#services">Services</a></li>
+                      <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white" href="#portfolio">Portfolio</a></li>
+                      <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white" href="#blog">Blog</a></li>
+                      <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white" href="#contact">Contact</a></li>
+                  </ul>
+                  <button class="flex mx-auto bg-accent1 lg:px-[15px] px-[12px] xl:py-[12px] py-[10px] rounded-[2rem] text-[16px] xl:text-[18px] font-medium text-white items-center transition duration-300 relative after:absolute :after:content-[''] after:bg-primary after:h-full after:w-full after:bottom-0 after:left-0 after:rounded-[2rem] after:trasition after:duration-300 after:opacity-0 hover:after:opacity-[1] mt-[30px]">
+                    <span class="icon bg-[#EFEBEB] text-accent1 w-[34px] h-[34px] rounded-full flex items-center justify-center ltr:xl:mr-[15px] ltr:mr-[10px] rtl:xl:ml-[15px] rtl:ml-[10px] relative z-[8] flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    </span>
+                    <span class="ltr:xl:pr-[5px] ltr:lg:pr-[5px] rtl:xl:pl-[5px] rtl:lg:pl-[5px] relative z-[8] flex-shrink-0">Download CV</span>
+                  </button>
+              </nav>
+              
           </div>
         </div>
-      </div>
-    </section>
-    <!-- Hero section end -->
+        <!-- End Offcanvas header menu -->
+        </div>
+        
 
-    <!-- ################################################################################### -->
+      </header>
+      <!-- Header area end -->
 
 
-    <!-- OUR SERVICE section start -->
+      
+      <!-- ################################################################################### -->
+
+
+      <main>
+        <!-- LANDING start -->
+        <section class="bg-cover bg-no-repeat bg-center sm:h-full only-md:h-screen lg:min-h-screen flex justify-center items-center overflow-hidden bg-[url('../images/hero-bg-img.png')] bg-[#DAEEF1] dark:bg-[url('../images/hero-bg-img-dark.png')] dark:bg-dark_primary_bg dark:border-b dark:border-dark_accent1" id="home">
+            <div class="container mx-auto flex sm:flex-col items-center justify-center lg:mt-[40px] only-md:mt-[40px] sm:pt-[100px] sm:pb-[70px]">
+                <div class="lg:max-w-[40%] sm:max-w-[60%] xs:max-w-[85%] only-md:max-w-[40%] flex justify-end">
+                  <div class="relative only-xl:max-w-[70%]">
+                      <img class="hidden dark:block" src="https://cdn.discordapp.com/attachments/1110567618701693000/1110997986718269480/header-laptop_1.png" alt="">
+
+                      <!-- <img class="dark:hidden" src="./assets/images/hero-man.png" alt="">
+                      <span class="absolute top-[100px] lg:top-[210px] right-[-20px] only-md:right-[-10px] only-xl:max-w-[65px] lg:max-w-[80px] xl:max-w-[105px] sm:max-w-[50px] only-md:max-w-[70px] animateUpDown"><img src="./assets/images/photoshop-logo.png" alt=""></span>
+                      <span class="absolute top-[80px] left-[-40px] md:left-[-10px] only-xl:max-w-[65px] lg:max-w-[80px] xl:max-w-[105px] sm:max-w-[50px] only-md:max-w-[70px] animateUpDown"><img src="./assets/images/figma.png" alt=""></span> -->
+
+                      <div class="flex items-center absolute bottom-0 right-0 bg-white dark:bg-dark_accent1 rounded-[50px] px-[15px] py-[15px] shadow-[0_0_50px_0_rgba(196,206,213,0.2)] dark:shadow-[0_0_50px_0_rgba(0,0,0,0.2)]"> 
+                        <div class="text-accent1 w-[45px]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        </div>
+                        <!-- <div class="pl-[10px] pr-[15px]">
+                            <span class="block text-[20px] lg:text-[26px] font-bold text-primary dark:text-white font-heebo leading-[1]">1100k+</span>
+                            <span class="block text-paragraph dark:text-slate-200 text-[17px]">Completed projects</span>
+                        </div> -->
+                      </div>
+
+                   </div>
+                </div>
+                <div class="ltr:xl:pl-[95px] ltr:lg:pl-[50px] ltr:only-md:pl-[40px] rtl:xl:pr-[95px] rtl:lg:pr-[50px] rtl:only-md:pr-[40px] flex-grow sm:mt-[30px] sm:text-center">
+                  <!-- <span class="text-accent1 text-[24px] font-semibold italic pb-[5px]">HELLO  I'M</span> -->
+                  <h2 class="lg:text-[60px] only-md:text-[40px] sm:text-[28px] font-bold font-heebo text-heading dark:text-white">ItEthik </h2>
+                  <h3 class="font-heebo font-normal text-primary dark:text-white">We help you with your IT problems </h3>
+                  <p class="lg:text-[20px] md:text-[16px] text-paragraph dark:text-slate-200 lg:mt-[18px] md:mt-[15px]">There are many variations of sum availabled <br> in alley of type and scrambled it some.</p>
+                   <div class="flex items-center gap-[18px] flex-wrap mt-[30px] sm:justify-center">
+                      <a href="#" class="btn outline-btn text-accent1 shrink-0">About Us</a>
+                      
+                      <div class="flex items-center flex-wrap gap-[15px] sm:justify-center">
+                        <span class="font-heebo lg:text-[22px] md:text-[18px] font-semibold shrink-0 text-primary dark:text-white">Follow Us: </span>
+                        <div class="flex items-center">
+                          <!-- Facebook -->
+                          <a href="#" class="w-[30px] h-[30px] flex items-center justify-center text-accent1 border border-accent1 transition duration-300 hover:bg-accent1 hover:text-white rounded-full">
+                            <svg  fill="currentColor" stroke="currentColor" width="13" height="14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+                          </a>
+
+                          <!-- twitter -->
+                          <a href="#" class="w-[30px] h-[30px] flex items-center justify-center text-accent1 border border-accent1 transition duration-300 hover:bg-accent1 hover:text-white rounded-full ltr:ml-[10px] rtl:mr-[10px]">
+                            <svg fill="currentColor" stroke="currentColor" width="13" height="14"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+                          </a>
+
+                          <!-- instagram -->
+                          <a href="#" class="w-[30px] h-[30px] flex items-center justify-center text-accent1 border border-accent1 transition duration-300 hover:bg-accent1 hover:text-white rounded-full ltr:ml-[10px] rtl:mr-[10px]">                            
+                            <svg fill="currentColor" stroke="currentColor" width="13" height="14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                          </a>
+                        </div>
+                      </div>
+                   </div>
+                </div>
+            </div>
+        </section>
+        <!-- LANDING end -->
+        
+
+        <!-- ################################################################################### -->
+
+
+        <!-- OUR SERVICE section start -->
         
         <section class="lg:py-[100px] md:py-[70px]" id="services">
             <div class="container mx-auto">
@@ -358,142 +270,48 @@
 
             </div>
         </section>
-    <!-- OUR SERVICE section end -->  
 
-    <!-- About me section start -->
-    <section
-      class="bg-cover bg-no-repeat bg-center bg-[url('https://ik.imagekit.io/hk376cwka/images/about-me-bg.png?updatedAt=1685287405206')] bg-[#ECF1F6] dark:bg-dark_primary_bg dark:bg-none py-[70px] lg:py-[100px] dark:border-t dark:border-b dark:border-dark_accent1 "
-      id="about">
-      <div class="container mx-auto">
-        <div class="flex justify-between sm:flex-wrap sm:flex-col-reverse">
-          <div class="w-full lg:max-w-[550px]">
-            <div>
-              <span class="text-accent1 text-[20px] lg:text-[15px] font-medium mb-[10px] lg:mb-[5px]">Why Chosse
-                Us?</span>
-              <h2
-                class="text-[24px] only-md:text-[32px] lg:text-[48px] font-bold font-heebo leading-[36px] lg:leading-[58px] text-[#000248] dark:text-white ltr:lg:pr-[50px] rtl:lg:pl-[50px]">
-                Top choice for Mac, desktop, and laptop repairs / upgrades.
-              </h2>
-            </div>
-            <div class="mt-[30px]">
-              <h3 class="text-accent1 text-[20px] lg:text-[24px] font-medium ">Key Points:</h3>
-              <ul class="flex justify-between flex-wrap mt-[18px]">
-                <li
-                  class="text-paragraph dark:text-slate-200 w-full xs:max-w-[100%]  max-w-[50%] ltr:pl-[18px] rtl:pr-[18px] my-[10px] relative before:absolute before:content-[''] before:bg-accent1 before:w-[6px] before:h-[6px] ltr:before:left-0 rtl:before:right-0 before:top-[8px] before:rounded-full after:absolute after::content-[''] after:w-4 after:h-4 after:border-2 after:border-accent1 ltr:after:left-[-5px] rtl:after:right-[-5px] after:top-[3px] after:border-solid after:rounded-full text-[17px]">
-                  Pre-informed about cost, time</li>
+        <!-- Why choose us? -->
+        <section class="bg-cover bg-no-repeat bg-center bg-[url('../images/about-me-bg.png')] bg-[#ECF1F6] dark:bg-dark_primary_bg dark:bg-none py-[70px] lg:py-[100px] dark:border-t dark:border-b dark:border-dark_accent1" id="about">
+          <div class="container mx-auto">
+              <div class="flex justify-between sm:flex-wrap sm:flex-col-reverse">
+                  <div class="w-full lg:max-w-[550px]">
+                      <div>
+                        <!-- <span class="text-accent1 text-[20px] lg:text-[24px] font-medium mb-[10px] lg:mb-[5px]">ABOUT ME</span> -->
+                        <h2 class="text-[24px] only-md:text-[32px] lg:text-[48px] font-bold font-heebo leading-[36px] lg:leading-[58px] text-[#000248] dark:text-white ltr:lg:pr-[50px] rtl:lg:pl-[50px]">Why Choose Us?</h2>
+                      </div>
+                      <div class="mt-[30px]">
+                        <h3 class="text-accent1 text-[20px] lg:text-[24px] font-medium ">At ItEthik, we offer the most comprehensive repair options. Whether it's a Mac, desktop, or laptop, we can repair or upgrade it. <br>Discover why we are the top choice for device repairs & upgrades by learning more about us:</h3>
+                        <ul class="flex justify-between flex-wrap mt-[18px]">
+                          <li class="text-paragraph dark:text-slate-200 w-full xs:max-w-[100%]  max-w-[50%] ltr:pl-[18px] rtl:pr-[18px] my-[10px] relative before:absolute before:content-[''] before:bg-accent1 before:w-[6px] before:h-[6px] ltr:before:left-0 rtl:before:right-0 before:top-[8px] before:rounded-full after:absolute after::content-[''] after:w-4 after:h-4 after:border-2 after:border-accent1 ltr:after:left-[-5px] rtl:after:right-[-5px] after:top-[3px] after:border-solid after:rounded-full text-[17px]">Pre-informed about cost, time</li>
 
-                  <li
-                  class="text-paragraph dark:text-slate-200 w-full xs:max-w-[100%]  max-w-[50%] ltr:pl-[18px] rtl:pr-[18px] my-[10px] relative before:absolute before:content-[''] before:bg-accent1 before:w-[6px] before:h-[6px] ltr:before:left-0 rtl:before:right-0 before:top-[8px] before:rounded-full after:absolute after::content-[''] after:w-4 after:h-4 after:border-2 after:border-accent1 ltr:after:left-[-5px] rtl:after:right-[-5px] after:top-[3px] after:border-solid after:rounded-full text-[17px]">
-                  Device Security and transparent process</li>
+                          <li class="text-paragraph dark:text-slate-200 w-full xs:max-w-[100%]  max-w-[50%] ltr:pl-[18px] rtl:pr-[18px] my-[10px] relative before:absolute before:content-[''] before:bg-accent1 before:w-[6px] before:h-[6px] ltr:before:left-0 rtl:before:right-0 before:top-[8px] before:rounded-full after:absolute after::content-[''] after:w-4 after:h-4 after:border-2 after:border-accent1 ltr:after:left-[-5px] rtl:after:right-[-5px] after:top-[3px] after:border-solid after:rounded-full text-[17px]">Device Security and transparent process</li>
 
-                <li
-                  class="text-paragraph dark:text-slate-200 w-full xs:max-w-[100%]  max-w-[50%] ltr:pl-[18px] rtl:pr-[18px] my-[10px] relative before:absolute before:content-[''] before:bg-accent1 before:w-[6px] before:h-[6px] ltr:before:left-0 rtl:before:right-0 before:top-[8px] before:rounded-full after:absolute after::content-[''] after:w-4 after:h-4 after:border-2 after:border-accent1 ltr:after:left-[-5px] rtl:after:right-[-5px] after:top-[3px] after:border-solid after:rounded-full text-[17px]">
-                  Urgent Repair Services</li>
+                          <li class="text-paragraph dark:text-slate-200 w-full xs:max-w-[100%]  max-w-[50%] ltr:pl-[18px] rtl:pr-[18px] my-[10px] relative before:absolute before:content-[''] before:bg-accent1 before:w-[6px] before:h-[6px] ltr:before:left-0 rtl:before:right-0 before:top-[8px] before:rounded-full after:absolute after::content-[''] after:w-4 after:h-4 after:border-2 after:border-accent1 ltr:after:left-[-5px] rtl:after:right-[-5px] after:top-[3px] after:border-solid after:rounded-full text-[17px]">Urgent Repair Services</li>
 
-                <li
-                  class="text-paragraph dark:text-slate-200 w-full xs:max-w-[100%]  max-w-[50%] ltr:pl-[18px] rtl:pr-[18px] my-[10px] relative before:absolute before:content-[''] before:bg-accent1 before:w-[6px] before:h-[6px] ltr:before:left-0 rtl:before:right-0 before:top-[8px] before:rounded-full after:absolute after::content-[''] after:w-4 after:h-4 after:border-2 after:border-accent1 ltr:after:left-[-5px] rtl:after:right-[-5px] after:top-[3px] after:border-solid after:rounded-full text-[17px]">
-                  Expert and Trained technician</li>
+                          <li class="text-paragraph dark:text-slate-200 w-full xs:max-w-[100%]  max-w-[50%] ltr:pl-[18px] rtl:pr-[18px] my-[10px] relative before:absolute before:content-[''] before:bg-accent1 before:w-[6px] before:h-[6px] ltr:before:left-0 rtl:before:right-0 before:top-[8px] before:rounded-full after:absolute after::content-[''] after:w-4 after:h-4 after:border-2 after:border-accent1 ltr:after:left-[-5px] rtl:after:right-[-5px] after:top-[3px] after:border-solid after:rounded-full text-[17px]">Expert and Trained technician</li>
 
-              </ul>
-              <a href="#about" class="btn solid-btn text-accent1 mt-[35px] inline-block">Contact Us</a>
-            </div>
+                        </ul>
+                        <a href="#" class="btn solid-btn text-accent1 mt-[35px] inline-block">Contact Us</a>
+                      </div>
+                  </div>
+                  <div class="sm:mb-[50px]">
+                      <div class="relative">
+                        <img class="relative z-10 sm:mx-auto" src="./assets/images/logo/Itethik-circle-4.png" alt="">
+                        <span class="absolute sm:w-[100px] sm:h-[100px] only-md:w-[150px] only-md:h-[150px] lg:w-[200px] lg:h-[200px] xl:w-[250px] xl:h-[250px] border-[8px] lg:border-[13px] border-accent1 rounded-full xs:bottom-[-25%] sm:bottom-[-12%] bottom-[-18%] ltr:sm:left-[3%] ltr:left-[-18%] rtl:sm:right-[3%] rtl:right-[-18%] animateUpDown"></span>
+                      </div>
+                      <div class="text-center mt-[30px]">
+                        <h4 class="font-heebo text-[50px] lg:text-[80px] font-bold leading-[1] text-white title-stroke">500+</h4>
+                         <span class="font-bold sm:text-[20px] only-md:text-[24px] lg:text-[30px] font-heebo text-primary dark:text-white">Services Attended</span>
+                      </div>
+                  </div>
+              </div>
           </div>
-          <div class="sm:mb-[50px]">
-            <div class="relative">
-              <img class="relative z-10 sm:mx-auto"
-                src="https://ik.imagekit.io/hk376cwka/images/about1.png?updatedAt=1685287405247" width="535"
-                height="549" alt="" loading="lazy">
-              <span
-                class="absolute sm:w-[100px] sm:h-[100px] only-md:w-[150px] only-md:h-[150px] lg:w-[200px] lg:h-[200px] xl:w-[250px] xl:h-[250px] border-[8px] lg:border-[13px] border-accent1 rounded-full xs:bottom-[-25%] sm:bottom-[-12%] bottom-[-18%] ltr:sm:left-[3%] ltr:left-[-18%] rtl:sm:right-[3%] rtl:right-[-18%] animateUpDown"></span>
-            </div>
-            <div class="text-center mt-[30px]">
-              <h4 class="font-heebo text-[50px] lg:text-[80px] font-bold leading-[1] text-white title-stroke">500+</h4>
-              <span
-                class="font-bold sm:text-[20px] only-md:text-[24px] lg:text-[30px] font-heebo text-primary dark:text-white">Services Attended
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- About me section end -->
+        </section>
+        <!-- OUR SERVICE section end -->  
 
-    <!-- Logo list section start -->
-    <!-- <section class="py-[70px] lg:py-[100px] border-b-[1px] border-[#DDDDDD] dark:border-dark_accent1">
-      <div class="container mx-auto">
-        <div class="relative">
-          <div
-            class="w-full absolute h-[1px] bg-[#DDDDDD] top-[50%] translate-y-[-50%] ltr:left-0 rtl:right-0 2xs:hidden">
-          </div>
-          <div class="flex flex-wrap">
-            <div
-              class="max-w-[25%] 2xs:max-w-[50%] w-full ltr:border-r-[1px] rtl:border-l-[1px] border-[#DDDDDD] dark:border-dark_accent1 client__logo--padding">
-              <div
-                class="w-full client__logo--padding--inner 2xs:border-b-[1px] 2xs:border-[#DDDDDD] dark:2xs:border-dark_accent1">
 
-                <img class="mx-auto grayscale hover:grayscale-0 transition duration-300 dark:block hidden"
-                  src="./assets/images/logo/dark-log-1.png" alt="" loading="lazy">
-              </div>
-              <div
-                class="w-full client__logo--padding--inner 2xs:border-b-[1px] 2xs:border-[#DDDDDD] dark:2xs:border-dark_accent1">
-
-                <img class="mx-auto grayscale hover:grayscale-0 transition duration-300 dark:block hidden"
-                  src="./assets/images/logo/dark-log-2.png" alt="" loading="lazy">
-              </div>
-            </div>
-
-            <div
-              class="max-w-[25%] 2xs:max-w-[50%] w-full ltr:border-r-[1px] rtl:border-l 2xs:border-none border-[#DDDDDD] dark:border-dark_accent1 client__logo--padding">
-              <div
-                class="w-full client__logo--padding--inner 2xs:border-b-[1px] 2xs:border-[#DDDDDD] dark:2xs:border-dark_accent1">
-
-                <img class="mx-auto grayscale hover:grayscale-0 transition duration-300 dark:block hidden"
-                  src="./assets/images/logo/dark-log-3.png" alt="" loading="lazy">
-              </div>
-              <div
-                class="w-full client__logo--padding--inner 2xs:border-b-[1px] 2xs:border-[#DDDDDD] dark:2xs:border-dark_accent1">
-
-                <img class="mx-auto grayscale hover:grayscale-0 transition duration-300 dark:block hidden"
-                  src="./assets/images/logo/dark-log-4.png" alt="" loading="lazy">
-              </div>
-            </div>
-
-            <div
-              class="max-w-[25%] 2xs:max-w-[50%] w-full ltr:border-r-[1px] rtl:border-l border-[#DDDDDD] client__logo--padding dark:border-dark_accent1">
-              <div
-                class="w-full client__logo--padding--inner 2xs:border-b-[1px] 2xs:border-[#DDDDDD] dark:2xs:border-dark_accent1">
-
-                <img class="mx-auto grayscale hover:grayscale-0 transition duration-300 dark:block hidden"
-                  src="./assets/images/logo/dark-log-5.png" alt="" loading="lazy">
-              </div>
-              <div class="w-full client__logo--padding--inner">
-
-                <img class="mx-auto grayscale hover:grayscale-0 transition duration-300 dark:block hidden"
-                  src="./assets/images/logo/dark-log-6.png" alt="" loading="lazy">
-              </div>
-            </div>
-
-            <div class="max-w-[25%] 2xs:max-w-[50%] w-full client__logo--padding">
-              <div
-                class="w-full client__logo--padding--inner 2xs:border-b-[1px] 2xs:border-[#DDDDDD] dark:2xs:border-dark_accent1">
-
-                <img class="mx-auto grayscale hover:grayscale-0 transition duration-300 dark:block hidden"
-                  src="./assets/images/logo/dark-log-7.png" alt="" loading="lazy">
-              </div>
-              <div class="w-full client__logo--padding--inner">
-
-                <img class="mx-auto grayscale hover:grayscale-0 transition duration-300 dark:block hidden"
-                  src="./assets/images/logo/dark-log-8.png" alt="" loading="lazy">
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section> -->
-    <!-- Logo list section end -->
-
-       <!-- ################################################################################### -->
+        <!-- ################################################################################### -->
 
 
         <!-- PORTFOLIO SECTION start -->
@@ -783,30 +601,150 @@
         <!-- PORTFOLIO SECTION end -->
 
 
-<!-- ################################################################################### -->
+        <!-- ################################################################################### -->
 
 
-    <!-- Testimonial section start -->
-    <section class="lg:py-[100px] md:py-[70px] dark:border-b dark:border-dark_accent1">
-      <div class="container mx-auto">
-        <!-- Section title start -->
-        <div class="mb-[35px] lg:mb-[55px]">
-          <div class="max-w-full max-w-full w-full text-center">
-            <span class="text-accent1 text-[20px] lg:text-[24px] font-medium mb-[10px] lg:mb-[5px]">TESTIMONIALS</span>
-            <h2
-              class="text:[28px] lg:text-[48px] font-bold font-heebo leading-[36x] lg:leading-[58px] text-[#000248] dark:text-white">
-              We are people say about us
-            </h2>
-          </div>
-        </div>
-        <!-- Section title end -->
+        <!-- TESTIMONAIL section start -->
+        <section class="lg:py-[100px] md:py-[70px] dark:border-b dark:border-dark_accent1">
+            <div class="container mx-auto">
+              <!-- Section title start -->
+              <div class="mb-[35px] lg:mb-[55px]">
+                <div class="max-w-full max-w-full w-full text-center">
+                  <span class="text-accent1 text-[20px] lg:text-[24px] font-medium mb-[10px] lg:mb-[5px]">TESTIMONIALS</span>
+                  <h2 class="text:[28px] lg:text-[48px] font-bold font-heebo leading-[36x] lg:leading-[58px] text-[#000248] dark:text-white">We are people say me
+                   </h2>
+                </div>
+              </div>
+              <!-- Section title end -->
 
-        <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-<div class="elfsight-app-3cdcec3f-4c6b-44aa-9212-70b047fdfb5e hidden dark:block"></div>
-    <!-- Testimonial section end -->
+                <div class="testimonial__slider--inner lg:px-[220px] relative">
+                    <!-- Slider main container -->
+                  <div class="swiper testimonial__slider">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                      
+                      <!-- Single slide -->
+                      <div class="swiper-slide">
+                        <div class="slider__inner text-center"> 
+                            <div class="client__rating flex justify-center gap-[5px]">
+                              <span>
+                                <svg class="fill-[#ffce31] stroke-[#ffce31]" xmlns="http://www.w3.org/2000/svg" width="20" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                              </span>
+                              <span>
+                                <svg class="fill-[#ffce31] stroke-[#ffce31]" xmlns="http://www.w3.org/2000/svg" width="20" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                              </span>
+                              <span>
+                                <svg class="fill-[#ffce31] stroke-[#ffce31]" xmlns="http://www.w3.org/2000/svg" width="20" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                              </span>
+                              <span>
+                                <svg class="fill-[#ffce31] stroke-[#ffce31]" xmlns="http://www.w3.org/2000/svg" width="20" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                              </span>
+                              <span>
+                                <svg class="fill-[#ffce31] stroke-[#ffce31]" xmlns="http://www.w3.org/2000/svg" width="20" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                              </span>
+                            </div>
+                            <div class="text-[24px] leading-8 text-paragraph dark:text-slate-200 italic mt-[20px] mb-[30px]">
+                              “We understand the importance of approaching each work integrally and believe in the power of simple and we say easy cation growth.
+                            </div>
+                            <div>
+                              <img class="mx-auto w-[130px] h-[130px] rounded-full shadow-[0_0_50px_0_rgba(196,206,213,0.2)]" src="./assets/images/testimonial/1.png" alt="">
+                              <div class="mt-[25px]">
+                                <h3 class="text-2xl text-primary dark:text-white">Romes Barson</h3>
+                                <span class="dark:text-slate-100">Manager</span>
+                              </div>
+                            </div>
 
-<!-- ################################################################################### -->
-        <br><br><br><br>
+                        </div>
+                      </div>
+                      <!-- Single slide -->
+                      <!-- Single slide -->
+                      <div class="swiper-slide">
+                        <div class="slider__inner text-center"> 
+                            <div class="client__rating flex justify-center gap-[5px]">
+                              <span>
+                                <svg class="fill-[#ffce31] stroke-[#ffce31]" xmlns="http://www.w3.org/2000/svg" width="20" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                              </span>
+                              <span>
+                                <svg class="fill-[#ffce31] stroke-[#ffce31]" xmlns="http://www.w3.org/2000/svg" width="20" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                              </span>
+                              <span>
+                                <svg class="fill-[#ffce31] stroke-[#ffce31]" xmlns="http://www.w3.org/2000/svg" width="20" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                              </span>
+                              <span>
+                                <svg class="fill-[#ffce31] stroke-[#ffce31]" xmlns="http://www.w3.org/2000/svg" width="20" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                              </span>
+                              <span>
+                                <svg class="fill-[#ffce31] stroke-[#ffce31]" xmlns="http://www.w3.org/2000/svg" width="20" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                              </span>
+                            </div>
+                            <div class="text-[24px] leading-8 text-paragraph dark:text-slate-200 italic mt-[20px] mb-[30px]">
+                              “We understand the importance of approaching each work integrally and believe in the power of simple and we say easy cation growth.
+                            </div>
+                            <div>
+                              <img class="mx-auto w-[130px] h-[130px] rounded-full shadow-[0_0_50px_0_rgba(196,206,213,0.2)]" src="./assets/images/testimonial/1.png" alt="">
+                              <div class="mt-[25px]">
+                                <h3 class="text-2xl text-primary dark:text-white">Romes Barson</h3>
+                                <span class="dark:text-slate-100">Manager</span>
+                              </div>
+                            </div>
+
+                        </div>
+                      </div>
+                      <!-- Single slide -->
+                      <!-- Single slide -->
+                      <div class="swiper-slide">
+                        <div class="slider__inner text-center"> 
+                            <div class="client__rating flex justify-center gap-[5px]">
+                              <span>
+                                <svg class="fill-[#ffce31] stroke-[#ffce31]" xmlns="http://www.w3.org/2000/svg" width="20" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                              </span>
+                              <span>
+                                <svg class="fill-[#ffce31] stroke-[#ffce31]" xmlns="http://www.w3.org/2000/svg" width="20" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                              </span>
+                              <span>
+                                <svg class="fill-[#ffce31] stroke-[#ffce31]" xmlns="http://www.w3.org/2000/svg" width="20" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                              </span>
+                              <span>
+                                <svg class="fill-[#ffce31] stroke-[#ffce31]" xmlns="http://www.w3.org/2000/svg" width="20" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                              </span>
+                              <span>
+                                <svg class="fill-[#ffce31] stroke-[#ffce31]" xmlns="http://www.w3.org/2000/svg" width="20" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                              </span>
+                            </div>
+                            <div class="text-[24px] leading-8 text-paragraph dark:text-slate-200 italic mt-[20px] mb-[30px]">
+                              “We understand the importance of approaching each work integrally and believe in the power of simple and we say easy cation growth.
+                            </div>
+                            <div>
+                              <img class="mx-auto w-[130px] h-[130px] rounded-full shadow-[0_0_50px_0_rgba(196,206,213,0.2)]" src="./assets/images/testimonial/1.png" alt="">
+                              <div class="mt-[25px]">
+                                <h3 class="text-2xl text-primary dark:text-white">Romes Barson</h3>
+                                <span class="dark:text-slate-100">Manager</span>
+                              </div>
+                            </div>
+
+                        </div>
+                      </div>
+                      <!-- Single slide -->
+
+
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination mt-7"></div>
+                  </div>
+                  <div class="md:hidden">
+                      <span class="absolute top-[38%] translate-y-[-50%] left-0 xl:left-[-12%] only-xl:left-[0]  text-accent1">
+                        <svg class="w-full only-lg:max-w-[130px] only-xl:max-w-[150px] xl:max-w-[250px] opacity-30"  fill="currentColor" stroke="currentColor"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V320 288 216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H320c-35.3 0-64-28.7-64-64V320 288 216z"/></svg>
+                      </span>
+                      <span class="absolute top-[38%] translate-y-[-50%] right-0 xl:right-[-12%] only-xl:right-[0] text-accent1">
+                        <svg  class="w-full only-lg:max-w-[130px] only-xl:max-w-[150px] xl:max-w-[250px] opacity-30" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M448 296c0 66.3-53.7 120-120 120h-8c-17.7 0-32-14.3-32-32s14.3-32 32-32h8c30.9 0 56-25.1 56-56v-8H320c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64h64c35.3 0 64 28.7 64 64v32 32 72zm-256 0c0 66.3-53.7 120-120 120H64c-17.7 0-32-14.3-32-32s14.3-32 32-32h8c30.9 0 56-25.1 56-56v-8H64c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64h64c35.3 0 64 28.7 64 64v32 32 72z"/></svg>
+                      </span>
+                  </div>
+                </div>
+            </div>
+        </section>
+        <!-- TESTIMONAIL section end -->
+
+
         <!-- BLOG section start -->
         <section class="pb-[70px] lg:pb-[100px]" id="blog">
           <div class="container mx-auto">
@@ -876,7 +814,7 @@
                             Computers are essential tools in our daily lives, and it’s important to keep them running smoothly and efficiently. Upgrading your computer regularly is one of the best ways to achieve this. In this blog, we will discuss the benefits of regular computer upgrades and why they are essential for maximizing your computer’s performance.
                             
                             <br><br>
-                            <!-- <img src="assets/images/blog/pc-upgrade-2.png" width="50%" class="blog-mid"> -->
+                            <img src="assets/images/blog/pc-upgrade-2.png" width="50%" class="blog-mid">
 
                             <b>Increased Speed and Efficiency:</b> Upgrading your computer’s hardware components, such as its RAM or hard drive, can significantly increase its speed and efficiency. This means that you can run more programs and applications simultaneously without slowing down your computer.</li>
                             
@@ -1172,120 +1110,110 @@
         <!-- BLOG section end -->
 
 
-            <!-- Team section start -->
+        <!-- ################################################################################### -->
 
-    <section class="lg:py-[100px] md:py-[70px] dark:border-b dark:border-dark_accent1">
-      <div class="container mx-auto">
-        <!-- Section title start -->
-        <div class="mb-[35px] lg:mb-[55px]">
-          <div class="max-w-full max-w-full w-full text-center">
-            <span class="text-accent1 text-[20px] lg:text-[24px] font-medium mb-[10px] lg:mb-[5px]">Our
-              Professionals</span>
-            <h2
-              class="text:[28px] lg:text-[48px] font-bold font-heebo leading-[36x] lg:leading-[58px] text-[#000248] dark:text-white">
-              Meet Our Expert Team
-            </h2>
+
+        <!-- OUR EXPERT TEAM start -->
+        <div class="container mx-auto">
+          <!-- title -->
+          <div class="mb-[35px] lg:mb-[55px]">
+            <div class="max-w-full max-w-full w-full text-center">
+              <span class="text-accent1 text-[20px] lg:text-[24px] font-medium mb-[10px] lg:mb-[5px]">OUR PROFESSIONALS</span>
+              <h2 class="text:[28px] lg:text-[48px] font-bold font-heebo leading-[36x] lg:leading-[58px] text-[#000248] dark:text-white">Meet our expert team
+               </h2>
+            </div>
           </div>
-        </div>
-        <!-- Team title end -->
+        
+          <!-- cards -->
+          <div class="flex justify-center gap-8">
+            
+            <div class="max-w-[405px] mx-4">
+              <div class="relative after:bg-white after:w-full after:bottom-0 after:left-0 after:content[''] after:h-[75%] after:absolute after:rounded-xl">
+                  <!-- Profile image start -->
+                  <div class="text-center pb-6 relative z-10 sm:px-4 lg:px-11">
+                      <div class="pb-5">
+                        <img class="md:w-[250px] md:h-[250px] lg:w-[290px] lg:h-[290px] rounded-full mx-auto border border-accent1 p-1" src="./assets/images/Keshav.jpeg" alt="">
+                      </div>
+                      <h4 class="text-primary">Keshav Sharma</h4>
+                      <span>Service Team Manager</span>
+                  </div>
+                  <!-- Profile image end -->
 
-        <section class="py-20">
-          <div class="team">
-            <div class="team-members">
-              <div class="team-card rounded-lg overflow-hidden shadow-lg">
-                <img src="assets/images/Keshav.webp" alt="Team Member 1" class="w-full h-auto profile-image">
-                <div class="team-card-content">
-                  <h3>Keshav Sharma</h3>
-                  <p>Web Developer</p>
-                  <div class="social-icons">
-                    <a href="#" onclick="alert('Facebook clicked')"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" onclick="alert('Instagram clicked')"><i class="fab fa-instagram"></i></a>
-                    <a href="#" onclick="alert('LinkedIn clicked')"><i class="fab fa-linkedin-in"></i></a>
+                  <!-- Profile contact info 1 start -->
+                  <div class="border-t border-[#ddd] py-6 px-12 z-10 relative">
+                      <!-- Single contact start -->
+                      <div class="flex items-center">
+                          <span class="border border-accent1 text-accent1 w-9 h-9 rounded-full flex items-center justify-center">
+                            <svg class="max-w-5" width="16" height="34" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
+                          </span>
+                          <span class="ltr:pl-4 rtl:pr-4 text-[18px]">
+                            <a class="hover:text-accent1" href="tel:+01215656855">+01215656855</a>
+                          </span>
+                      </div>
+                      <!-- Single contact -->
+                      
+                      <!-- Single contact start -->
+                      <div class="flex items-center mt-5">
+                          <span class="border border-accent1 text-accent1 w-9 h-9 rounded-full flex items-center justify-center">
+                            <svg class="max-w-5" xmlns="http://www.w3.org/2000/svg" width="16" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                          </span>
+                          <span class="ltr:pl-4 rtl:pr-4 text-[18px]">
+                            <a class="hover:text-accent1" href="mailto:exampal@gmail.com">example@gmail.com</a>
+                          </span>
+                      </div>
+
                   </div>
-                </div>
-                <div class="card-popup">
-                  <div class="card-popup-content">
-                    <img src="assets/images/Keshav.webp" alt="Team Member 1">
-                    <h5>Keshav Sharma</h5>
-                    <p>Web Developer</p>
-                    <p>Service Team Manager</p>
-                    <div class="card-popup-social-icons">
-                      <a href="#" onclick="alert('Facebook clicked')"><i class="fab fa-facebook-f"></i></a>
-                      <a href="#" onclick="alert('Instagram clicked')"><i class="fab fa-instagram"></i></a>
-                      <a href="#" onclick="alert('LinkedIn clicked')"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                  </div>
-                  <a href="#" class="close-button">&times;</a>
-                </div>
+                  <!-- Profile contact info 1 end -->
+
               </div>
-              <!--  team members 2 -->
+            </div>
 
-              <div class="team-card rounded-lg overflow-hidden shadow-lg">
-                <img src="assets/images/Keshav.webp" alt="Team Member 1" class="w-full h-auto profile-image">
-                <div class="team-card-content">
-                  <h3>Keshav Sharma</h3>
-                  <p>Web Developer</p>
-                  <div class="social-icons">
-                    <a href="#" onclick="alert('Facebook clicked')"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" onclick="alert('Instagram clicked')"><i class="fab fa-instagram"></i></a>
-                    <a href="#" onclick="alert('LinkedIn clicked')"><i class="fab fa-linkedin-in"></i></a>
+            <div class="max-w-[405px] mx-4">
+              <div class="relative after:bg-white after:w-full after:bottom-0 after:left-0 after:content[''] after:h-[75%] after:absolute after:rounded-xl">
+                  <!-- Profile image start -->
+                  <div class="text-center pb-6 relative z-10 sm:px-4 lg:px-11">
+                      <div class="pb-5">
+                        <img class="md:w-[250px] md:h-[250px] lg:w-[290px] lg:h-[290px] rounded-full mx-auto border border-accent1 p-1" src="./assets/images/Sanjeev.jpeg" alt="">
+                      </div>
+                      <h4 class="text-primary">Sanjeev Neupane</h4>
+                      <span>Sales Team Manager</span>
                   </div>
-                </div>
-                <div class="card-popup">
-                  <div class="card-popup-content">
-                    <img src="assets/images/Keshav.webp" alt="Team Member 1">
-                    <h5>Keshav Sharma</h5>
-                    <p>Web Developer</p>
-                    <p>Service Team Manager</p>
-                    <div class="card-popup-social-icons">
-                      <a href="#" onclick="alert('Facebook clicked')"><i class="fab fa-facebook-f"></i></a>
-                      <a href="#" onclick="alert('Instagram clicked')"><i class="fab fa-instagram"></i></a>
-                      <a href="#" onclick="alert('LinkedIn clicked')"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                  </div>
-                  <a href="#" class="close-button">&times;</a>
-                </div>
-              </div>
-              <!--  team members 3 -->
+                  <!-- Profile image end -->
 
-              <div class="team-card rounded-lg overflow-hidden shadow-lg">
-                <img src="assets/images/Keshav.webp" alt="Team Member 1" class="w-full h-auto profile-image">
-                <div class="team-card-content">
-                  <h3>Keshav Sharma</h3>
-                  <p>Web Developer</p>
-                  <div class="social-icons">
-                    <a href="#" onclick="alert('Facebook clicked')"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" onclick="alert('Instagram clicked')"><i class="fab fa-instagram"></i></a>
-                    <a href="#" onclick="alert('LinkedIn clicked')"><i class="fab fa-linkedin-in"></i></a>
+                  <!-- Profile contact info 1 start -->
+                  <div class="border-t border-[#ddd] py-6 px-12 z-10 relative">
+                      <!-- Single contact start -->
+                      <div class="flex items-center">
+                          <span class="border border-accent1 text-accent1 w-9 h-9 rounded-full flex items-center justify-center">
+                            <svg class="max-w-5" width="16" height="34" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
+                          </span>
+                          <span class="ltr:pl-4 rtl:pr-4 text-[18px]">
+                            <a class="hover:text-accent1" href="tel:+01215656855">+01215656855</a>
+                          </span>
+                      </div>
+                      <!-- Single contact -->
+                      
+                      <!-- Single contact start -->
+                      <div class="flex items-center mt-5">
+                          <span class="border border-accent1 text-accent1 w-9 h-9 rounded-full flex items-center justify-center">
+                            <svg class="max-w-5" xmlns="http://www.w3.org/2000/svg" width="16" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                          </span>
+                          <span class="ltr:pl-4 rtl:pr-4 text-[18px]">
+                            <a class="hover:text-accent1" href="mailto:exampal@gmail.com">example@gmail.com</a>
+                          </span>
+                      </div>
+
                   </div>
-                </div>
-                <div class="card-popup">
-                  <div class="card-popup-content">
-                    <img src="assets/images/Keshav.webp" alt="Team Member 1">
-                    <h5>Keshav Sharma</h5>
-                    <p>Web Developer</p>
-                    <p>Sales Team Manager</p>
-                    <div class="card-popup-social-icons">
-                      <a href="#" onclick="alert('Facebook clicked')"><i class="fab fa-facebook-f"></i></a>
-                      <a href="#" onclick="alert('Instagram clicked')"><i class="fab fa-instagram"></i></a>
-                      <a href="#" onclick="alert('LinkedIn clicked')"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                  </div>
-                  <a href="#" class="close-button">&times;</a>
-                </div>
+                  <!-- Profile contact info 1 end -->
+
               </div>
             </div>
           </div>
-      </div>
-      <button class="btn solid-btn mt-12" style="display: block; margin: 20px auto;">More</button>
+        </div>
+        <!-- OUR EXPERT TEAM end -->
 
 
-
-
-
-    </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-<!-- ################################################################################### -->
+        <!-- ################################################################################### -->
 
 
         <!-- Contact form section start -->
@@ -1333,7 +1261,7 @@
                     </div>
                     <div class="ltr:pl-6 rtl:pr-6">
                        <h3 class="text-[28px] md:text-[22px] font-heebo font-bold text-primary dark:text-white">Call Us</h3>
-                       <span class="text-primary dark:text-slate-200 text-[22px] md:text-[18px] mt-5">+91 89 76 76 5350 <br> +91 89 76 76 5351</span>
+                       <span class="text-primary dark:text-slate-200 text-[22px] md:text-[18px] mt-5">+91 89 76 76 5350 <br> +91 89 7676 5350</span>
                     </div>
                   </div>
                   <!-- Single contact info end -->
@@ -1389,86 +1317,46 @@
         
       <!-- ################################################################################### -->
 
-  </main>
-  <!-- Main wrapper end -->
 
-
-  <!-- Footer start -->
-  <!--cookie notice-->
-  <div id="cookie-notice"
-    style="position: fixed; bottom: 0; left: 0; right: 0; background-color: rgba(33,36,40,255); color: #fff; padding: 20px; text-align: center; font-size: 14px; z-index: 9999;">
-    This website uses cookies to ensure you get the best experience on our website. <a href="#"
-      style="color: #fff;">Learn more</a>
-    <button onclick="acceptCookies()"
-      style="background-color: #fff; color: rgba(33,36,40,255); border: none; padding: 8px 16px; margin-left: 10px; cursor: pointer;">Accept</button>
-  </div>
-
-
-  <!-- whatapp  -->
-  <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-  <div class="elfsight-app-0809a40f-3062-420d-9569-857c5a5efca2"></div>
-
-  <footer
-    class="py-[50px] bg-cover bg-no-repeat bg-center bg-[url('https://ik.imagekit.io/hk376cwka/images/footer-bg.png?updatedAt=1685287405195')] bg-[#EFF3F7] dark:bg-[url('https://ik.imagekit.io/hk376cwka/images/footer-bg-dark.png?updatedAt=1685287405211')] dark:bg-dark_primary_bg dark:border-t dark:border-dark_accent1">
-    <div class="container mx-auto">
-      <div class="grid grid-cols-1 only-md:grid-cols-2 lg:grid-cols-2">
-        <div class="flex">
-          <p class="flex items-center flex-wrap sm:justify-center dark:text-slate-200">Developed <span
-              class="px-[3px] text-paragraph dark:text-white">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
-                stroke="text-paragraph" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="feather feather-heart">
-                <path
-                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                </path>
-              </svg>
-            </span> by <span class=" px-[3px]"><a class="text-accent1 hover:font-bold" href="#">Itethik</a></span>© 2021
-          </p>
-        </div>
-        <div class="flex items-center justify-end gap-8 sm:justify-center sm:mt-[15px]">
-          <a href="#"
-            class="text-paragraph dark:text-slate-200 hover:text-accent1 font-medium text-[20px] sm:text-[16px]">Terms &
-            Condition</a>
-          <a href="#"
-            class="text-paragraph dark:text-slate-200 hover:text-accent1 font-medium text-[20px] sm:text-[16px]">
-            Privacy Policy</a>
-          <a href="#"
-            class="text-paragraph dark:text-slate-200 hover:text-accent1 font-medium text-[20px] sm:text-[16px]">
-            Credits </a>
-        </div>
+    <!-- Footer start -->
+      <footer class="py-[50px] bg-cover bg-no-repeat bg-center bg-[url('../images/footer-bg.png')] bg-[#EFF3F7] dark:bg-[url('../images/footer-bg-dark.png')] dark:bg-dark_primary_bg dark:border-t dark:border-dark_accent1">
+      <div class="container mx-auto">
+          <div class="grid grid-cols-1 only-md:grid-cols-2 lg:grid-cols-2">
+              <div class="flex">
+                <p class="flex items-center flex-wrap sm:justify-center dark:text-slate-200">
+                  © ItEthik 2023
+                </p>
+              </div>
+              <div class="flex items-center justify-end gap-8 sm:justify-center sm:mt-[15px]">
+                  <a href="#" class="text-paragraph dark:text-slate-200 hover:text-accent1 font-medium text-[20px] sm:text-[16px]">Terms & Condition</a>
+                  <a href="#" class="text-paragraph dark:text-slate-200 hover:text-accent1 font-medium text-[20px] sm:text-[16px]"> Privacy Policy</a>
+              </div>
+          </div>
       </div>
-    </div>
 
-  </footer>
-  <!-- Footer end -->
+    </footer>
+    <!-- Footer end -->
 
-  <!-- Back to top start -->
-  <button id="scroll__top"
-    class="fixed bottom-12 ltr:right-5 rtl:left-5 z-50 bg-accent1 text-white shadow-[0_2px_22px_rgba(0,0,0,0.16)] cursor-pointer translate-y-12 opacity-0 invisible transition-all duration-300 leading-[1] w-11 h-11 rounded-full border-none flex items-center justify-center hover:bg-primary dark:hover:bg-dark_accent1">
-    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-6 leading-[1]" viewBox="0 0 512 512">
-      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="48"
-        d="M112 244l144-144 144 144M256 120v292" />
-    </svg>
-  </button>
-  <!-- Back to top end -->
+    <!-- Back to top start -->
+    <button id="scroll__top" class="fixed bottom-12 ltr:right-5 rtl:left-5 z-50 bg-accent1 text-white shadow-[0_2px_22px_rgba(0,0,0,0.16)] cursor-pointer translate-y-12 opacity-0 invisible transition-all duration-300 leading-[1] w-11 h-11 rounded-full border-none flex items-center justify-center hover:bg-primary dark:hover:bg-dark_accent1">
+      <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-6 leading-[1]" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round"  stroke-width="48" d="M112 244l144-144 144 144M256 120v292"/></svg>
+    </button>  
+    <!-- Back to top end -->
 
 
 
-  <!-------- Plugins js ------>
+    <!-------- Plugins js ------>
 
-  <!-- Swiper js -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- Swiper js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    
+    <!-- imagesloaded js -->
+    <script src="./assets/js/imagesloaded.pkgd.min.js" defer></script>
 
-  <!-- imagesloaded js -->
-  <script src="./assets/js/imagesloaded.pkgd.min.js" defer></script>
+    <!-- Isotope js -->
+    <script src="./assets/js/isotope.pkgd.min.js" defer></script>
 
-  <!-- Isotope js -->
-  <script src="./assets/js/isotope.pkgd.min.js" defer></script>
-
-  <!-- Custom js -->
-  <script src="./assets/js/script.js" defer></script>
-
-
-</body>
-
+    <!-- Custom js -->
+    <script src="./assets/js/script.js" defer></script>
+  </body>
 </html>
