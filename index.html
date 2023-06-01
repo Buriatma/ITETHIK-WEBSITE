@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="./assets/css/styles.css" />
 
 
-  <script>
+  <!-- <script>
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
     if (localStorage.getItem("theme-color") === "dark" || (!("theme-color" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
         document.documentElement.classList.add("dark");
@@ -32,7 +32,20 @@
         document.documentElement.classList.add("dark");
         document.getElementById("light__to--dark")?.classList.add("dark--version");
       } 
+  </script> -->
+
+  <script>
+    // Set the theme to dark by default
+    document.documentElement.classList.add("dark");
+    document.getElementById("light__to--dark")?.classList.add("dark--version");
+  
+    // Check if the stored theme color is set to light, then remove the dark theme
+    if (localStorage.getItem("theme-color") === "light") {
+      document.documentElement.classList.remove("dark");
+      document.getElementById("light__to--dark")?.classList.remove("dark--version");
+    }
   </script>
+  
 </head>
 
 <body class="font-rubik dark:bg-dark_primary_bg">
