@@ -9,6 +9,7 @@
 
   <link rel="shortcut icon" type="image/x-icon" href="https://ik.imagekit.io/hk376cwka/images/monogram__1_.png?updatedAt=1685287408855>
 
+  <link rel="">
   <link rel=" preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -22,7 +23,7 @@
   <link rel="stylesheet" href="./assets/css/styles.css" />
 
 
-  <script>
+  <!-- <script>
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
     if (localStorage.getItem("theme-color") === "dark" || (!("theme-color" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
       document.documentElement.classList.add("dark");
@@ -32,7 +33,14 @@
       document.documentElement.classList.add("dark");
       document.getElementById("light__to--dark")?.classList.add("dark--version");
     } 
+  </script> -->
+
+  <script>
+    // On page load, set the dark theme
+    document.documentElement.classList.add("dark");
+    document.getElementById("light__to--dark")?.classList.add("dark--version");
   </script>
+  
 </head>
 
 <body class="font-rubik dark:bg-dark_primary_bg">
