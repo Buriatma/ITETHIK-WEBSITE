@@ -23,21 +23,16 @@
 
 
   <script>
-    // On page load, forcefully set the dark theme
-    document.addEventListener("DOMContentLoaded", function() {
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (localStorage.getItem("theme-color") === "dark" || (!("theme-color" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
       document.documentElement.classList.add("dark");
       document.getElementById("light__to--dark")?.classList.add("dark--version");
-    });
-  
-    // Remove light theme styles
-    var lightStyles = document.querySelectorAll("link[rel='stylesheet'][href*='light-theme.css']");
-    lightStyles.forEach(function(style) {
-      style.disabled = true;
-    });
+    } 
+    if (localStorage.getItem("theme-color") === "light") {
+      document.documentElement.classList.remove("dark");
+      document.getElementById("light__to--dark")?.classList.remove("dark--version");
+    } 
   </script>
-  
-  
-  
 </head>
 
 <body class="font-rubik dark:bg-dark_primary_bg">
