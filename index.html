@@ -23,12 +23,20 @@
 
 
   <script>
-    // On page load, add the "dark" class to the root element and "dark--version" class to the specified element
+    // On page load, forcefully set the dark theme
     document.addEventListener("DOMContentLoaded", function() {
       document.documentElement.classList.add("dark");
       document.getElementById("light__to--dark")?.classList.add("dark--version");
     });
+  
+    // Remove light theme styles
+    var lightStyles = document.querySelectorAll("link[rel='stylesheet'][href*='light-theme.css']");
+    lightStyles.forEach(function(style) {
+      style.disabled = true;
+    });
   </script>
+  
+  
   
 </head>
 
