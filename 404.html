@@ -1,188 +1,297 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <style>
-    body {
-      background-color: #212428;
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-      text-align: center;
-      color: #ffffff;
-    }
-    
-    h1 {
-      font-size: 48px;
-      margin-top: 200px;
-      animation: slideIn 1s forwards;
-    }
-    
-    p {
-      font-size: 18px;
-      animation: fadeIn 1s forwards;
-    }
-    
-    #error-image {
-      margin-top: 50px;
-      animation: shake 0.8s infinite;
-    }
-    
-    @keyframes slideIn {
-      0% {
-        opacity: 0;
-        transform: translateY(-50px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-    
-    @keyframes shake {
-      0% { transform: translateX(0); }
-      20% { transform: translateX(-10px) rotate(-10deg); }
-      40% { transform: translateX(10px) rotate(10deg); }
-      60% { transform: translateX(-10px) rotate(-10deg); }
-      80% { transform: translateX(10px) rotate(10deg); }
-      100% { transform: translateX(0); }
-    }
-    
-    .button {
-      display: inline-block;
-      padding: 10px 20px;
-      margin: 10px;
-      background-color: blue;
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-    
-    .button:hover {
-      background-color: yellow;
-      animation: bounce 0.8s infinite;
-    }
-    
-    .search-bar {
-      display: inline-block;
-      margin-top: 30px;
-    }
-    
-    .search-bar input[type="text"] {
-      padding: 10px;
-      border: none;
-      border-radius: 20px;
-    }
-    
-    .parallax-container {
-      perspective: 1000px;
-      overflow-x: hidden;
-      overflow-y: auto;
-      height: 300px;
-    }
-    
-    .parallax-image {
-      width: 100%;
-      height: auto;
-      transform: translateZ(-100px) scale(1.5);
-      transition: transform 0.2s;
-    }
-    
-    .parallax-container:hover .parallax-image {
-      transform: translateZ(-100px) scale(1.2);
-    }
-    
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 36px;
-        margin-top: 150px;
-      }
-      
-      p {
-        font-size: 16px;
-      }
-      
-      .button {
-        padding: 8px 16px;
-      }
-      
-      .search-bar {
-        margin-top: 20px;
-      }
-      
-      .search-bar input[type="text"] {
-        padding: 8px;
-      }
-      
-      .parallax-container {
-        height: 250px;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 24px;
-        margin-top: 100px;
-      }
-      
-      p {
-        font-size: 14px;
-      }
-      
-      .button {
-        padding: 6px 12px;
-        font-size: 12px;
-      }
-      
-      .search-bar {
-        margin-top: 10px;
-      }
-      
-      .search-bar input[type="text"] {
-        padding: 6px;
-      }
-      
-      .parallax-container {
-        height: 200px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <h1>Oops! It seems like you've stumbled upon a digital wilderness.</h1>
-  <p>The page you're looking for, much like a hidden treasure, is nowhere to be found. But fear not, for every journey has its detours.</p>
-  <p>While our digital explorers are tirelessly searching for the missing link, why not take a moment to enjoy the beauty of this unexpected pitstop? Take a deep breath, embrace the serendipity, and let your imagination wander amidst the vast expanse of ones and zeros.</p>
-  <p>Remember, even the greatest discoveries were made by those who dared to venture off the beaten path. So, feel free to explore our website further, and who knows what hidden gems you might uncover?</p>
-  <p>In the meantime, we apologize for any inconvenience caused. Rest assured, our team is on the case, determined to bring the missing page back to life. Until then, let's revel in the mystery and celebrate the unexpected.</p>
-  <p>Thank you for your patience and understanding. Happy exploring!</p>
+<html lang="en" class="scroll-smooth" dir="ltr">
 
-  <div class="parallax-container">
-    <div class="parallax-image">
-      <img id="error-image" src="https://img.freepik.com/premium-vector/404-error-page-found-natural-fantasy-illustration-concept-web-missing-page_111925-144.jpg?w=1380" alt="Error Image">
-    </div>
-  </div>
-  
-  <div class="button-container">
-    <a href="/" class="button">Back to Home</a>
-  </div>
-  
-  <div class="search-bar">
-    <input type="text" placeholder="Search...">
-  </div>
-  
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ItEthik - An It Ethnicity</title>
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://ik.imagekit.io/hk376cwka/images/monogram__1_.png?updatedAt=1685287408855>
+
+  <link rel="">
+  <link rel=" preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap"
+    rel="stylesheet">
+
+  <!-- Plugins css -->
+  <link rel="stylesheet" href="./assets/css/mobilemenu.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <!-- Tailwind css -->
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+
   <script>
-    // JavaScript code to stop the animation after 5 seconds
-    setTimeout(function() {
-      var errorImage = document.getElementById('error-image');
-      errorImage.style.animation = 'none';
-    }, 5000);
+    // On page load, set the dark theme
+    document.documentElement.classList.add("dark");
+    document.getElementById("light__to--dark")?.classList.add("dark--version");
   </script>
+
+</head>
+
+<body class="font-rubik dark:bg-dark_primary_bg">
+
+  <!-- Preloader start -->
+  <div id="preloader">
+    <div class="loader--border"></div>
+  </div>
+  <!-- Preloader end -->
+
+  <!-- Header area start -->
+  <header class="absolute w-full left-0 top-0">
+    <div class="header__sticky py-5">
+      <div class="container mx-auto">
+        <div class="flex justify-between items-center">
+          <div class="logo">
+            <a href="./index.html">
+              <img class="hidden dark:block" src="assets/images/blue-logo-border.png" loading="lazy" width="120"
+                height="30" alt="ItEthik" loading="lazy">
+            </a>
+          </div>
+          <div class="flex items-center md:hidden">
+            <nav>
+              <ul class="flex items-center">
+                <li>
+                  <a href="#home"
+                    class="text-[17px] xl:text-[19px] text-accent1 dark:text-orange font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Home</a>
+                </li>
+                <li>
+                  <a href="#about"
+                    class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">About</a>
+                </li>
+                </li>
+                <li>
+                  <a href="#services"
+                    class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Services</a>
+                </li>
+                <li>
+                  <a href="#portfolio"
+                    class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Projects</a>
+                </li>
+                <li>
+                  <a href="#blog"
+                    class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Blog</a>
+                </li>
+                <li><a href="#contact"
+                    class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Contact</a>
+                </li>
+              </ul>
+            </nav>
+            <a href="login.html">
+              <button
+                class="flex bg-accent1 lg:px-[15px] px-[12px] xl:py-[12px] py-[10px] rounded-[2rem] text-[16px] xl:text-[18px] font-medium text-white items-center ltr:ml-[32px] rtl:mr-[32px] transition duration-300 relative after:absolute :after:content-[''] after:bg-primary after:h-full after:w-full after:bottom-0 after:left-0 after:rounded-[2rem] after:trasition after:duration-300 after:opacity-0 hover:after:opacity-[1]">
+                <span
+                  class="icon bg-[#EFEBEB] text-accent1 w-[34px] h-[34px] rounded-full flex items-center justify-center ltr:xl:mr-[15px] ltr:mr-[10px] rtl:xl:ml-[15px] rtl:ml-[10px] relative z-[8] flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-activity">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </span>
+
+                <span
+                  class="ltr:xl:pr-[5px] ltr:lg:pr-[5px] rtl:xl:pl-[5px] rtl:lg:pl-[5px] relative z-[8] flex-shrink-0">Sign-in</span>
+              </button>
+            </a>
+          </div>
+          <div class="lg:hidden">
+            <button class="offcanvas__header--menu__open--btn text-primary dark:text-white " data-offcanvas>
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-menu">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Start Offcanvas header menu -->
+      <div class="offcanvas__header lg:hidden dark:bg-gray-800">
+        <div class="offcanvas__inner">
+          <div class="offcanvas__logo">
+            <a class="offcanvas__logo_link" href="index.html">
+              <img class="hidden dark:block" src="assets/images/blue-logo-border.png" loading="lazy" alt="ItEthik"
+                width="158" height="36">
+            </a>
+            <button class="offcanvas__close--btn dark:text-white" data-offcanvas>close</button>
+          </div>
+          <nav class="offcanvas__menu">
+            <ul class="offcanvas__menu_ul">
+              <li class="offcanvas__menu_li">
+                <a class="offcanvas__menu_item dark:text-orange" href="#home">Home</a>
+              </li>
+              <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white" href="about.html">About</a>
+              </li>
+              <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white"
+                  href="services.html">Services</a></li>
+              <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white"
+                  href="portfolio.html">Portfolio</a></li>
+              <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white" href="blog.html">Blog</a>
+              </li>
+              <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white"
+                  href="contact.html">Contact</a></li>
+            </ul>
+            <a href="login.html">
+              <button
+                class="flex mx-auto bg-accent1 lg:px-[15px] px-[12px] xl:py-[12px] py-[10px] rounded-[2rem] text-[16px] xl:text-[18px] font-medium text-white items-center transition duration-300 relative after:absolute :after:content-[''] after:bg-primary after:h-full after:w-full after:bottom-0 after:left-0 after:rounded-[2rem] after:trasition after:duration-300 after:opacity-0 hover:after:opacity-[1] mt-[30px]">
+                <span
+                  class="icon bg-[#EFEBEB] text-accent1 w-[34px] h-[34px] rounded-full flex items-center justify-center ltr:xl:mr-[15px] ltr:mr-[10px] rtl:xl:ml-[15px] rtl:ml-[10px] relative z-[8] flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-activity">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </span>
+                <span
+                  class="ltr:xl:pr-[5px] ltr:lg:pr-[5px] rtl:xl:pl-[5px] rtl:lg:pl-[5px] relative z-[8] flex-shrink-0">Sign-in</span>
+              </button>
+            </a>
+
+          </nav>
+        </div>
+      </div>
+
+      <!-- End Offcanvas header menu -->
+    </div>
+
+
+  </header>
+  <!-- Header area end -->
+
+  <!-- Main wrapper start -->
+  <main>
+    <!-- 404 section start -->
+
+
+    <section
+      class="bg-cover bg-no-repeat bg-center sm:h-full only-md:h-screen lg:min-h-screen flex justify-center items-center overflow-hidden bg-[url('../images/hero-bg-img.png')] bg-[#DAEEF1] dark:bg-[url('../images/hero-bg-img-dark.png')] dark:bg-dark_primary_bg dark:border-b dark:border-dark_accent1"
+      id="home">
+      <div
+        class="container mx-auto flex sm:flex-col items-center justify-center lg:mt-[40px] only-md:mt-[40px] sm:pt-[100px] sm:pb-[70px]">
+        <div class="lg:max-w-[40%] sm:max-w-[60%] xs:max-w-[85%] only-md:max-w-[40%] flex justify-end">
+          <div class="relative only-xl:max-w-[70%]">
+            <img class="hidden dark:block" src="https://cdn.vibox.co.uk/uploads/178/conversions/obs_amd_lgpu-large.png"
+              alt="" loading="lazy">
+          </div>
+        </div>
+        <div
+          class="ltr:xl:pl-[95px] ltr:lg:pl-[50px] ltr:only-md:pl-[40px] rtl:xl:pr-[95px] rtl:lg:pr-[50px] rtl:only-md:pr-[40px] flex-grow sm:mt-[30px] sm:text-center">
+          <span class="text-accent1 text-[24px] font-semibold italic pb-[5px]"></span>
+          <h2
+            class="lg:text-[60px] only-md:text-[40px] sm:text-[28px] font-bold font-heebo text-heading dark:text-white">
+            OPPS! <br> LOOKS LIKE <BR> YOU ARE LOST! </h2>
+          <h3 class="font-heebo font-normal text-primary dark:text-white"> </h3>
+          <p class="lg:text-[20px] md:text-[16px] text-paragraph dark:text-slate-200 lg:mt-[18px] md:mt-[15px]">We suggest you to go to homepage while we're fixing this problem.</p>
+            <br>
+            <br>
+            <br>
+            <div class="flex items-center justify-center h-full">
+              <a href="#" class="btn outline-btn text-accent1 shrink-0">Back To Home</a>
+            </div>
+            
+            
+
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </section>
+    <!-- 404 section end -->
+
+
+
+    <!-- ################################################################################### -->
+
+  </main>
+  <!-- Main wrapper end -->
+
+
+  <!-- Footer start -->
+  <!--cookie notice-->
+  <div id="cookie-notice"
+    style="position: fixed; bottom: 0; left: 0; right: 0; background-color: rgba(33,36,40,255); color: #fff; padding: 20px; text-align: center; font-size: 14px; z-index: 9999;">
+    This website uses cookies to ensure you get the best experience on our website. <a href="#"
+      style="color: #fff;">Learn more</a>
+    <button onclick="acceptCookies()"
+      style="background-color: #fff; color: rgba(33,36,40,255); border: none; padding: 8px 16px; margin-left: 10px; cursor: pointer;">Accept</button>
+  </div>
+
+
+  <!-- whatapp  -->
+  <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+  <div class="elfsight-app-0809a40f-3062-420d-9569-857c5a5efca2"></div>
+
+  <footer
+    class="py-[50px] bg-cover bg-no-repeat bg-center bg-[url('https://ik.imagekit.io/hk376cwka/images/footer-bg.png?updatedAt=1685287405195')] bg-[#EFF3F7] dark:bg-[url('https://ik.imagekit.io/hk376cwka/images/footer-bg-dark.png?updatedAt=1685287405211')] dark:bg-dark_primary_bg dark:border-t dark:border-dark_accent1">
+    <div class="container mx-auto">
+      <div class="grid grid-cols-1 only-md:grid-cols-2 lg:grid-cols-2">
+        <div class="flex">
+          <p class="flex items-center flex-wrap sm:justify-center dark:text-slate-200">Developed <span
+              class="px-[3px] text-paragraph dark:text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                stroke="text-paragraph" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-heart">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                </path>
+              </svg>
+            </span> by <span class=" px-[3px]"><a class="text-accent1 hover:font-bold" href="#">Itethik</a></span>© 2023
+          </p>
+        </div>
+        <div class="flex items-center justify-end gap-8 sm:justify-center sm:mt-[15px]">
+          <a href="#"
+            class="text-paragraph dark:text-slate-200 hover:text-accent1 font-medium text-[20px] sm:text-[16px]">Terms &
+            Condition</a>
+          <a href="#"
+            class="text-paragraph dark:text-slate-200 hover:text-accent1 font-medium text-[20px] sm:text-[16px]">
+            Privacy Policy</a>
+          <a href="#"
+            class="text-paragraph dark:text-slate-200 hover:text-accent1 font-medium text-[20px] sm:text-[16px]">
+            Credits </a>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <!-- Footer end -->
+
+  <!-- Back to top start -->
+  <button id="scroll__top"
+    class="fixed bottom-12 ltr:right-5 rtl:left-5 z-50 bg-accent1 text-white shadow-[0_2px_22px_rgba(0,0,0,0.16)] cursor-pointer translate-y-12 opacity-0 invisible transition-all duration-300 leading-[1] w-11 h-11 rounded-full border-none flex items-center justify-center hover:bg-primary dark:hover:bg-dark_accent1">
+    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon w-6 leading-[1]" viewBox="0 0 512 512">
+      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="48"
+        d="M112 244l144-144 144 144M256 120v292" />
+    </svg>
+  </button>
+  <!-- Back to top end -->
+
+
+
+  <!-------- Plugins js ------>
+
+  <!-- Swiper js -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+  <!-- imagesloaded js -->
+  <script src="./assets/js/imagesloaded.pkgd.min.js" defer></script>
+
+  <!-- Isotope js -->
+  <script src="./assets/js/isotope.pkgd.min.js" defer></script>
+
+  <!-- Custom js -->
+  <script src="./assets/js/script.js" defer></script>
+
+
 </body>
+
 </html>
